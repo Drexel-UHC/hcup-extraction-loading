@@ -1,0 +1,604 @@
+var,var_label,value_type,dataset_id
+AGE,Age in years at admission,int32,NY_SEDD_2017_CORE
+AGEDAY,Age in days (when age < 1 year),int32,NY_SEDD_2017_CORE
+AGEMONTH,Age in months (when age < 11 years),int32,NY_SEDD_2017_CORE
+AHOUR,Admission Hour,int32,NY_SEDD_2017_CORE
+AMONTH,Admission month,int32,NY_SEDD_2017_CORE
+ANESTH,Method of anesthesia,int32,NY_SEDD_2017_CORE
+AWEEKEND,Admission day is a weekend,int32,NY_SEDD_2017_CORE
+CPT1,CPT/HCPCS procedure code 1,string,NY_SEDD_2017_CORE
+CPT2,CPT/HCPCS procedure code 2,string,NY_SEDD_2017_CORE
+CPT3,CPT/HCPCS procedure code 3,string,NY_SEDD_2017_CORE
+CPT4,CPT/HCPCS procedure code 4,string,NY_SEDD_2017_CORE
+CPT5,CPT/HCPCS procedure code 5,string,NY_SEDD_2017_CORE
+CPT6,CPT/HCPCS procedure code 6,string,NY_SEDD_2017_CORE
+CPT7,CPT/HCPCS procedure code 7,string,NY_SEDD_2017_CORE
+CPT8,CPT/HCPCS procedure code 8,string,NY_SEDD_2017_CORE
+CPT9,CPT/HCPCS procedure code 9,string,NY_SEDD_2017_CORE
+CPT10,CPT/HCPCS procedure code 10,string,NY_SEDD_2017_CORE
+CPT11,CPT/HCPCS procedure code 11,string,NY_SEDD_2017_CORE
+CPT12,CPT/HCPCS procedure code 12,string,NY_SEDD_2017_CORE
+CPT13,CPT/HCPCS procedure code 13,string,NY_SEDD_2017_CORE
+CPT14,CPT/HCPCS procedure code 14,string,NY_SEDD_2017_CORE
+CPT15,CPT/HCPCS procedure code 15,string,NY_SEDD_2017_CORE
+CPT16,CPT/HCPCS procedure code 16,string,NY_SEDD_2017_CORE
+CPT17,CPT/HCPCS procedure code 17,string,NY_SEDD_2017_CORE
+CPT18,CPT/HCPCS procedure code 18,string,NY_SEDD_2017_CORE
+CPT19,CPT/HCPCS procedure code 19,string,NY_SEDD_2017_CORE
+CPT20,CPT/HCPCS procedure code 20,string,NY_SEDD_2017_CORE
+CPT21,CPT/HCPCS procedure code 21,string,NY_SEDD_2017_CORE
+CPT22,CPT/HCPCS procedure code 22,string,NY_SEDD_2017_CORE
+CPT23,CPT/HCPCS procedure code 23,string,NY_SEDD_2017_CORE
+CPT24,CPT/HCPCS procedure code 24,string,NY_SEDD_2017_CORE
+CPT25,CPT/HCPCS procedure code 25,string,NY_SEDD_2017_CORE
+CPT26,CPT/HCPCS procedure code 26,string,NY_SEDD_2017_CORE
+CPT27,CPT/HCPCS procedure code 27,string,NY_SEDD_2017_CORE
+CPT28,CPT/HCPCS procedure code 28,string,NY_SEDD_2017_CORE
+CPT29,CPT/HCPCS procedure code 29,string,NY_SEDD_2017_CORE
+CPT30,CPT/HCPCS procedure code 30,string,NY_SEDD_2017_CORE
+CPT31,CPT/HCPCS procedure code 31,string,NY_SEDD_2017_CORE
+CPT32,CPT/HCPCS procedure code 32,string,NY_SEDD_2017_CORE
+CPT33,CPT/HCPCS procedure code 33,string,NY_SEDD_2017_CORE
+CPT34,CPT/HCPCS procedure code 34,string,NY_SEDD_2017_CORE
+CPT35,CPT/HCPCS procedure code 35,string,NY_SEDD_2017_CORE
+CPT36,CPT/HCPCS procedure code 36,string,NY_SEDD_2017_CORE
+CPT37,CPT/HCPCS procedure code 37,string,NY_SEDD_2017_CORE
+CPT38,CPT/HCPCS procedure code 38,string,NY_SEDD_2017_CORE
+CPT39,CPT/HCPCS procedure code 39,string,NY_SEDD_2017_CORE
+CPT40,CPT/HCPCS procedure code 40,string,NY_SEDD_2017_CORE
+CPT41,CPT/HCPCS procedure code 41,string,NY_SEDD_2017_CORE
+CPT42,CPT/HCPCS procedure code 42,string,NY_SEDD_2017_CORE
+CPT43,CPT/HCPCS procedure code 43,string,NY_SEDD_2017_CORE
+CPT44,CPT/HCPCS procedure code 44,string,NY_SEDD_2017_CORE
+CPT45,CPT/HCPCS procedure code 45,string,NY_SEDD_2017_CORE
+CPT46,CPT/HCPCS procedure code 46,string,NY_SEDD_2017_CORE
+CPT47,CPT/HCPCS procedure code 47,string,NY_SEDD_2017_CORE
+CPT48,CPT/HCPCS procedure code 48,string,NY_SEDD_2017_CORE
+CPT49,CPT/HCPCS procedure code 49,string,NY_SEDD_2017_CORE
+CPT50,CPT/HCPCS procedure code 50,string,NY_SEDD_2017_CORE
+CPT51,CPT/HCPCS procedure code 51,string,NY_SEDD_2017_CORE
+CPT52,CPT/HCPCS procedure code 52,string,NY_SEDD_2017_CORE
+CPT53,CPT/HCPCS procedure code 53,string,NY_SEDD_2017_CORE
+CPT54,CPT/HCPCS procedure code 54,string,NY_SEDD_2017_CORE
+CPT55,CPT/HCPCS procedure code 55,string,NY_SEDD_2017_CORE
+CPT56,CPT/HCPCS procedure code 56,string,NY_SEDD_2017_CORE
+CPT57,CPT/HCPCS procedure code 57,string,NY_SEDD_2017_CORE
+CPT58,CPT/HCPCS procedure code 58,string,NY_SEDD_2017_CORE
+CPT59,CPT/HCPCS procedure code 59,string,NY_SEDD_2017_CORE
+CPT60,CPT/HCPCS procedure code 60,string,NY_SEDD_2017_CORE
+CPT61,CPT/HCPCS procedure code 61,string,NY_SEDD_2017_CORE
+CPT62,CPT/HCPCS procedure code 62,string,NY_SEDD_2017_CORE
+CPT63,CPT/HCPCS procedure code 63,string,NY_SEDD_2017_CORE
+CPT64,CPT/HCPCS procedure code 64,string,NY_SEDD_2017_CORE
+CPT65,CPT/HCPCS procedure code 65,string,NY_SEDD_2017_CORE
+CPT66,CPT/HCPCS procedure code 66,string,NY_SEDD_2017_CORE
+CPT67,CPT/HCPCS procedure code 67,string,NY_SEDD_2017_CORE
+CPT68,CPT/HCPCS procedure code 68,string,NY_SEDD_2017_CORE
+CPT69,CPT/HCPCS procedure code 69,string,NY_SEDD_2017_CORE
+CPT70,CPT/HCPCS procedure code 70,string,NY_SEDD_2017_CORE
+CPT71,CPT/HCPCS procedure code 71,string,NY_SEDD_2017_CORE
+CPT72,CPT/HCPCS procedure code 72,string,NY_SEDD_2017_CORE
+CPT73,CPT/HCPCS procedure code 73,string,NY_SEDD_2017_CORE
+CPT74,CPT/HCPCS procedure code 74,string,NY_SEDD_2017_CORE
+CPT75,CPT/HCPCS procedure code 75,string,NY_SEDD_2017_CORE
+CPT76,CPT/HCPCS procedure code 76,string,NY_SEDD_2017_CORE
+CPT77,CPT/HCPCS procedure code 77,string,NY_SEDD_2017_CORE
+CPT78,CPT/HCPCS procedure code 78,string,NY_SEDD_2017_CORE
+CPT79,CPT/HCPCS procedure code 79,string,NY_SEDD_2017_CORE
+CPT80,CPT/HCPCS procedure code 80,string,NY_SEDD_2017_CORE
+CPT81,CPT/HCPCS procedure code 81,string,NY_SEDD_2017_CORE
+CPT82,CPT/HCPCS procedure code 82,string,NY_SEDD_2017_CORE
+CPT83,CPT/HCPCS procedure code 83,string,NY_SEDD_2017_CORE
+CPT84,CPT/HCPCS procedure code 84,string,NY_SEDD_2017_CORE
+CPT85,CPT/HCPCS procedure code 85,string,NY_SEDD_2017_CORE
+CPT86,CPT/HCPCS procedure code 86,string,NY_SEDD_2017_CORE
+CPT87,CPT/HCPCS procedure code 87,string,NY_SEDD_2017_CORE
+CPT88,CPT/HCPCS procedure code 88,string,NY_SEDD_2017_CORE
+CPT89,CPT/HCPCS procedure code 89,string,NY_SEDD_2017_CORE
+CPT90,CPT/HCPCS procedure code 90,string,NY_SEDD_2017_CORE
+CPT91,CPT/HCPCS procedure code 91,string,NY_SEDD_2017_CORE
+CPT92,CPT/HCPCS procedure code 92,string,NY_SEDD_2017_CORE
+CPT93,CPT/HCPCS procedure code 93,string,NY_SEDD_2017_CORE
+CPT94,CPT/HCPCS procedure code 94,string,NY_SEDD_2017_CORE
+CPT95,CPT/HCPCS procedure code 95,string,NY_SEDD_2017_CORE
+CPT96,CPT/HCPCS procedure code 96,string,NY_SEDD_2017_CORE
+CPT97,CPT/HCPCS procedure code 97,string,NY_SEDD_2017_CORE
+CPT98,CPT/HCPCS procedure code 98,string,NY_SEDD_2017_CORE
+CPT99,CPT/HCPCS procedure code 99,string,NY_SEDD_2017_CORE
+CPT100,CPT/HCPCS procedure code 100,string,NY_SEDD_2017_CORE
+CPTCCS1,CCS: CPT 1,int32,NY_SEDD_2017_CORE
+CPTCCS2,CCS: CPT 2,int32,NY_SEDD_2017_CORE
+CPTCCS3,CCS: CPT 3,int32,NY_SEDD_2017_CORE
+CPTCCS4,CCS: CPT 4,int32,NY_SEDD_2017_CORE
+CPTCCS5,CCS: CPT 5,int32,NY_SEDD_2017_CORE
+CPTCCS6,CCS: CPT 6,int32,NY_SEDD_2017_CORE
+CPTCCS7,CCS: CPT 7,int32,NY_SEDD_2017_CORE
+CPTCCS8,CCS: CPT 8,int32,NY_SEDD_2017_CORE
+CPTCCS9,CCS: CPT 9,int32,NY_SEDD_2017_CORE
+CPTCCS10,CCS: CPT 10,int32,NY_SEDD_2017_CORE
+CPTCCS11,CCS: CPT 11,int32,NY_SEDD_2017_CORE
+CPTCCS12,CCS: CPT 12,int32,NY_SEDD_2017_CORE
+CPTCCS13,CCS: CPT 13,int32,NY_SEDD_2017_CORE
+CPTCCS14,CCS: CPT 14,int32,NY_SEDD_2017_CORE
+CPTCCS15,CCS: CPT 15,int32,NY_SEDD_2017_CORE
+CPTCCS16,CCS: CPT 16,int32,NY_SEDD_2017_CORE
+CPTCCS17,CCS: CPT 17,int32,NY_SEDD_2017_CORE
+CPTCCS18,CCS: CPT 18,int32,NY_SEDD_2017_CORE
+CPTCCS19,CCS: CPT 19,int32,NY_SEDD_2017_CORE
+CPTCCS20,CCS: CPT 20,int32,NY_SEDD_2017_CORE
+CPTCCS21,CCS: CPT 21,int32,NY_SEDD_2017_CORE
+CPTCCS22,CCS: CPT 22,int32,NY_SEDD_2017_CORE
+CPTCCS23,CCS: CPT 23,int32,NY_SEDD_2017_CORE
+CPTCCS24,CCS: CPT 24,int32,NY_SEDD_2017_CORE
+CPTCCS25,CCS: CPT 25,int32,NY_SEDD_2017_CORE
+CPTCCS26,CCS: CPT 26,int32,NY_SEDD_2017_CORE
+CPTCCS27,CCS: CPT 27,int32,NY_SEDD_2017_CORE
+CPTCCS28,CCS: CPT 28,int32,NY_SEDD_2017_CORE
+CPTCCS29,CCS: CPT 29,int32,NY_SEDD_2017_CORE
+CPTCCS30,CCS: CPT 30,int32,NY_SEDD_2017_CORE
+CPTCCS31,CCS: CPT 31,int32,NY_SEDD_2017_CORE
+CPTCCS32,CCS: CPT 32,int32,NY_SEDD_2017_CORE
+CPTCCS33,CCS: CPT 33,int32,NY_SEDD_2017_CORE
+CPTCCS34,CCS: CPT 34,int32,NY_SEDD_2017_CORE
+CPTCCS35,CCS: CPT 35,int32,NY_SEDD_2017_CORE
+CPTCCS36,CCS: CPT 36,int32,NY_SEDD_2017_CORE
+CPTCCS37,CCS: CPT 37,int32,NY_SEDD_2017_CORE
+CPTCCS38,CCS: CPT 38,int32,NY_SEDD_2017_CORE
+CPTCCS39,CCS: CPT 39,int32,NY_SEDD_2017_CORE
+CPTCCS40,CCS: CPT 40,int32,NY_SEDD_2017_CORE
+CPTCCS41,CCS: CPT 41,int32,NY_SEDD_2017_CORE
+CPTCCS42,CCS: CPT 42,int32,NY_SEDD_2017_CORE
+CPTCCS43,CCS: CPT 43,int32,NY_SEDD_2017_CORE
+CPTCCS44,CCS: CPT 44,int32,NY_SEDD_2017_CORE
+CPTCCS45,CCS: CPT 45,int32,NY_SEDD_2017_CORE
+CPTCCS46,CCS: CPT 46,int32,NY_SEDD_2017_CORE
+CPTCCS47,CCS: CPT 47,int32,NY_SEDD_2017_CORE
+CPTCCS48,CCS: CPT 48,int32,NY_SEDD_2017_CORE
+CPTCCS49,CCS: CPT 49,int32,NY_SEDD_2017_CORE
+CPTCCS50,CCS: CPT 50,int32,NY_SEDD_2017_CORE
+CPTCCS51,CCS: CPT 51,int32,NY_SEDD_2017_CORE
+CPTCCS52,CCS: CPT 52,int32,NY_SEDD_2017_CORE
+CPTCCS53,CCS: CPT 53,int32,NY_SEDD_2017_CORE
+CPTCCS54,CCS: CPT 54,int32,NY_SEDD_2017_CORE
+CPTCCS55,CCS: CPT 55,int32,NY_SEDD_2017_CORE
+CPTCCS56,CCS: CPT 56,int32,NY_SEDD_2017_CORE
+CPTCCS57,CCS: CPT 57,int32,NY_SEDD_2017_CORE
+CPTCCS58,CCS: CPT 58,int32,NY_SEDD_2017_CORE
+CPTCCS59,CCS: CPT 59,int32,NY_SEDD_2017_CORE
+CPTCCS60,CCS: CPT 60,int32,NY_SEDD_2017_CORE
+CPTCCS61,CCS: CPT 61,int32,NY_SEDD_2017_CORE
+CPTCCS62,CCS: CPT 62,int32,NY_SEDD_2017_CORE
+CPTCCS63,CCS: CPT 63,int32,NY_SEDD_2017_CORE
+CPTCCS64,CCS: CPT 64,int32,NY_SEDD_2017_CORE
+CPTCCS65,CCS: CPT 65,int32,NY_SEDD_2017_CORE
+CPTCCS66,CCS: CPT 66,int32,NY_SEDD_2017_CORE
+CPTCCS67,CCS: CPT 67,int32,NY_SEDD_2017_CORE
+CPTCCS68,CCS: CPT 68,int32,NY_SEDD_2017_CORE
+CPTCCS69,CCS: CPT 69,int32,NY_SEDD_2017_CORE
+CPTCCS70,CCS: CPT 70,int32,NY_SEDD_2017_CORE
+CPTCCS71,CCS: CPT 71,int32,NY_SEDD_2017_CORE
+CPTCCS72,CCS: CPT 72,int32,NY_SEDD_2017_CORE
+CPTCCS73,CCS: CPT 73,int32,NY_SEDD_2017_CORE
+CPTCCS74,CCS: CPT 74,int32,NY_SEDD_2017_CORE
+CPTCCS75,CCS: CPT 75,int32,NY_SEDD_2017_CORE
+CPTCCS76,CCS: CPT 76,int32,NY_SEDD_2017_CORE
+CPTCCS77,CCS: CPT 77,int32,NY_SEDD_2017_CORE
+CPTCCS78,CCS: CPT 78,int32,NY_SEDD_2017_CORE
+CPTCCS79,CCS: CPT 79,int32,NY_SEDD_2017_CORE
+CPTCCS80,CCS: CPT 80,int32,NY_SEDD_2017_CORE
+CPTCCS81,CCS: CPT 81,int32,NY_SEDD_2017_CORE
+CPTCCS82,CCS: CPT 82,int32,NY_SEDD_2017_CORE
+CPTCCS83,CCS: CPT 83,int32,NY_SEDD_2017_CORE
+CPTCCS84,CCS: CPT 84,int32,NY_SEDD_2017_CORE
+CPTCCS85,CCS: CPT 85,int32,NY_SEDD_2017_CORE
+CPTCCS86,CCS: CPT 86,int32,NY_SEDD_2017_CORE
+CPTCCS87,CCS: CPT 87,int32,NY_SEDD_2017_CORE
+CPTCCS88,CCS: CPT 88,int32,NY_SEDD_2017_CORE
+CPTCCS89,CCS: CPT 89,int32,NY_SEDD_2017_CORE
+CPTCCS90,CCS: CPT 90,int32,NY_SEDD_2017_CORE
+CPTCCS91,CCS: CPT 91,int32,NY_SEDD_2017_CORE
+CPTCCS92,CCS: CPT 92,int32,NY_SEDD_2017_CORE
+CPTCCS93,CCS: CPT 93,int32,NY_SEDD_2017_CORE
+CPTCCS94,CCS: CPT 94,int32,NY_SEDD_2017_CORE
+CPTCCS95,CCS: CPT 95,int32,NY_SEDD_2017_CORE
+CPTCCS96,CCS: CPT 96,int32,NY_SEDD_2017_CORE
+CPTCCS97,CCS: CPT 97,int32,NY_SEDD_2017_CORE
+CPTCCS98,CCS: CPT 98,int32,NY_SEDD_2017_CORE
+CPTCCS99,CCS: CPT 99,int32,NY_SEDD_2017_CORE
+CPTCCS100,CCS: CPT 100,int32,NY_SEDD_2017_CORE
+CPTDAY1,Number of days from admission to CPT1,int32,NY_SEDD_2017_CORE
+CPTDAY2,Number of days from admission to CPT2,int32,NY_SEDD_2017_CORE
+CPTDAY3,Number of days from admission to CPT3,int32,NY_SEDD_2017_CORE
+CPTDAY4,Number of days from admission to CPT4,int32,NY_SEDD_2017_CORE
+CPTDAY5,Number of days from admission to CPT5,int32,NY_SEDD_2017_CORE
+CPTDAY6,Number of days from admission to CPT6,int32,NY_SEDD_2017_CORE
+CPTDAY7,Number of days from admission to CPT7,int32,NY_SEDD_2017_CORE
+CPTDAY8,Number of days from admission to CPT8,int32,NY_SEDD_2017_CORE
+CPTDAY9,Number of days from admission to CPT9,int32,NY_SEDD_2017_CORE
+CPTDAY10,Number of days from admission to CPT10,int32,NY_SEDD_2017_CORE
+CPTDAY11,Number of days from admission to CPT11,int32,NY_SEDD_2017_CORE
+CPTDAY12,Number of days from admission to CPT12,int32,NY_SEDD_2017_CORE
+CPTDAY13,Number of days from admission to CPT13,int32,NY_SEDD_2017_CORE
+CPTDAY14,Number of days from admission to CPT14,int32,NY_SEDD_2017_CORE
+CPTDAY15,Number of days from admission to CPT15,int32,NY_SEDD_2017_CORE
+CPTDAY16,Number of days from admission to CPT16,int32,NY_SEDD_2017_CORE
+CPTDAY17,Number of days from admission to CPT17,int32,NY_SEDD_2017_CORE
+CPTDAY18,Number of days from admission to CPT18,int32,NY_SEDD_2017_CORE
+CPTDAY19,Number of days from admission to CPT19,int32,NY_SEDD_2017_CORE
+CPTDAY20,Number of days from admission to CPT20,int32,NY_SEDD_2017_CORE
+CPTDAY21,Number of days from admission to CPT21,int32,NY_SEDD_2017_CORE
+CPTDAY22,Number of days from admission to CPT22,int32,NY_SEDD_2017_CORE
+CPTDAY23,Number of days from admission to CPT23,int32,NY_SEDD_2017_CORE
+CPTDAY24,Number of days from admission to CPT24,int32,NY_SEDD_2017_CORE
+CPTDAY25,Number of days from admission to CPT25,int32,NY_SEDD_2017_CORE
+CPTDAY26,Number of days from admission to CPT26,int32,NY_SEDD_2017_CORE
+CPTDAY27,Number of days from admission to CPT27,int32,NY_SEDD_2017_CORE
+CPTDAY28,Number of days from admission to CPT28,int32,NY_SEDD_2017_CORE
+CPTDAY29,Number of days from admission to CPT29,int32,NY_SEDD_2017_CORE
+CPTDAY30,Number of days from admission to CPT30,int32,NY_SEDD_2017_CORE
+CPTDAY31,Number of days from admission to CPT31,int32,NY_SEDD_2017_CORE
+CPTDAY32,Number of days from admission to CPT32,int32,NY_SEDD_2017_CORE
+CPTDAY33,Number of days from admission to CPT33,int32,NY_SEDD_2017_CORE
+CPTDAY34,Number of days from admission to CPT34,int32,NY_SEDD_2017_CORE
+CPTDAY35,Number of days from admission to CPT35,int32,NY_SEDD_2017_CORE
+CPTDAY36,Number of days from admission to CPT36,int32,NY_SEDD_2017_CORE
+CPTDAY37,Number of days from admission to CPT37,int32,NY_SEDD_2017_CORE
+CPTDAY38,Number of days from admission to CPT38,int32,NY_SEDD_2017_CORE
+CPTDAY39,Number of days from admission to CPT39,int32,NY_SEDD_2017_CORE
+CPTDAY40,Number of days from admission to CPT40,int32,NY_SEDD_2017_CORE
+CPTDAY41,Number of days from admission to CPT41,int32,NY_SEDD_2017_CORE
+CPTDAY42,Number of days from admission to CPT42,int32,NY_SEDD_2017_CORE
+CPTDAY43,Number of days from admission to CPT43,int32,NY_SEDD_2017_CORE
+CPTDAY44,Number of days from admission to CPT44,int32,NY_SEDD_2017_CORE
+CPTDAY45,Number of days from admission to CPT45,int32,NY_SEDD_2017_CORE
+CPTDAY46,Number of days from admission to CPT46,int32,NY_SEDD_2017_CORE
+CPTDAY47,Number of days from admission to CPT47,int32,NY_SEDD_2017_CORE
+CPTDAY48,Number of days from admission to CPT48,int32,NY_SEDD_2017_CORE
+CPTDAY49,Number of days from admission to CPT49,int32,NY_SEDD_2017_CORE
+CPTDAY50,Number of days from admission to CPT50,int32,NY_SEDD_2017_CORE
+CPTDAY51,Number of days from admission to CPT51,int32,NY_SEDD_2017_CORE
+CPTDAY52,Number of days from admission to CPT52,int32,NY_SEDD_2017_CORE
+CPTDAY53,Number of days from admission to CPT53,int32,NY_SEDD_2017_CORE
+CPTDAY54,Number of days from admission to CPT54,int32,NY_SEDD_2017_CORE
+CPTDAY55,Number of days from admission to CPT55,int32,NY_SEDD_2017_CORE
+CPTDAY56,Number of days from admission to CPT56,int32,NY_SEDD_2017_CORE
+CPTDAY57,Number of days from admission to CPT57,int32,NY_SEDD_2017_CORE
+CPTDAY58,Number of days from admission to CPT58,int32,NY_SEDD_2017_CORE
+CPTDAY59,Number of days from admission to CPT59,int32,NY_SEDD_2017_CORE
+CPTDAY60,Number of days from admission to CPT60,int32,NY_SEDD_2017_CORE
+CPTDAY61,Number of days from admission to CPT61,int32,NY_SEDD_2017_CORE
+CPTDAY62,Number of days from admission to CPT62,int32,NY_SEDD_2017_CORE
+CPTDAY63,Number of days from admission to CPT63,int32,NY_SEDD_2017_CORE
+CPTDAY64,Number of days from admission to CPT64,int32,NY_SEDD_2017_CORE
+CPTDAY65,Number of days from admission to CPT65,int32,NY_SEDD_2017_CORE
+CPTDAY66,Number of days from admission to CPT66,int32,NY_SEDD_2017_CORE
+CPTDAY67,Number of days from admission to CPT67,int32,NY_SEDD_2017_CORE
+CPTDAY68,Number of days from admission to CPT68,int32,NY_SEDD_2017_CORE
+CPTDAY69,Number of days from admission to CPT69,int32,NY_SEDD_2017_CORE
+CPTDAY70,Number of days from admission to CPT70,int32,NY_SEDD_2017_CORE
+CPTDAY71,Number of days from admission to CPT71,int32,NY_SEDD_2017_CORE
+CPTDAY72,Number of days from admission to CPT72,int32,NY_SEDD_2017_CORE
+CPTDAY73,Number of days from admission to CPT73,int32,NY_SEDD_2017_CORE
+CPTDAY74,Number of days from admission to CPT74,int32,NY_SEDD_2017_CORE
+CPTDAY75,Number of days from admission to CPT75,int32,NY_SEDD_2017_CORE
+CPTDAY76,Number of days from admission to CPT76,int32,NY_SEDD_2017_CORE
+CPTDAY77,Number of days from admission to CPT77,int32,NY_SEDD_2017_CORE
+CPTDAY78,Number of days from admission to CPT78,int32,NY_SEDD_2017_CORE
+CPTDAY79,Number of days from admission to CPT79,int32,NY_SEDD_2017_CORE
+CPTDAY80,Number of days from admission to CPT80,int32,NY_SEDD_2017_CORE
+CPTDAY81,Number of days from admission to CPT81,int32,NY_SEDD_2017_CORE
+CPTDAY82,Number of days from admission to CPT82,int32,NY_SEDD_2017_CORE
+CPTDAY83,Number of days from admission to CPT83,int32,NY_SEDD_2017_CORE
+CPTDAY84,Number of days from admission to CPT84,int32,NY_SEDD_2017_CORE
+CPTDAY85,Number of days from admission to CPT85,int32,NY_SEDD_2017_CORE
+CPTDAY86,Number of days from admission to CPT86,int32,NY_SEDD_2017_CORE
+CPTDAY87,Number of days from admission to CPT87,int32,NY_SEDD_2017_CORE
+CPTDAY88,Number of days from admission to CPT88,int32,NY_SEDD_2017_CORE
+CPTDAY89,Number of days from admission to CPT89,int32,NY_SEDD_2017_CORE
+CPTDAY90,Number of days from admission to CPT90,int32,NY_SEDD_2017_CORE
+CPTDAY91,Number of days from admission to CPT91,int32,NY_SEDD_2017_CORE
+CPTDAY92,Number of days from admission to CPT92,int32,NY_SEDD_2017_CORE
+CPTDAY93,Number of days from admission to CPT93,int32,NY_SEDD_2017_CORE
+CPTDAY94,Number of days from admission to CPT94,int32,NY_SEDD_2017_CORE
+CPTDAY95,Number of days from admission to CPT95,int32,NY_SEDD_2017_CORE
+CPTDAY96,Number of days from admission to CPT96,int32,NY_SEDD_2017_CORE
+CPTDAY97,Number of days from admission to CPT97,int32,NY_SEDD_2017_CORE
+CPTDAY98,Number of days from admission to CPT98,int32,NY_SEDD_2017_CORE
+CPTDAY99,Number of days from admission to CPT99,int32,NY_SEDD_2017_CORE
+CPTDAY100,Number of days from admission to CPT100,int32,NY_SEDD_2017_CORE
+CPTM1_1,First CPT-4/HCPCS modifier 1,string,NY_SEDD_2017_CORE
+CPTM1_2,First CPT-4/HCPCS modifier 2,string,NY_SEDD_2017_CORE
+CPTM1_3,First CPT-4/HCPCS modifier 3,string,NY_SEDD_2017_CORE
+CPTM1_4,First CPT-4/HCPCS modifier 4,string,NY_SEDD_2017_CORE
+CPTM1_5,First CPT-4/HCPCS modifier 5,string,NY_SEDD_2017_CORE
+CPTM1_6,First CPT-4/HCPCS modifier 6,string,NY_SEDD_2017_CORE
+CPTM1_7,First CPT-4/HCPCS modifier 7,string,NY_SEDD_2017_CORE
+CPTM1_8,First CPT-4/HCPCS modifier 8,string,NY_SEDD_2017_CORE
+CPTM1_9,First CPT-4/HCPCS modifier 9,string,NY_SEDD_2017_CORE
+CPTM1_10,First CPT-4/HCPCS modifier 10,string,NY_SEDD_2017_CORE
+CPTM1_11,First CPT-4/HCPCS modifier 11,string,NY_SEDD_2017_CORE
+CPTM1_12,First CPT-4/HCPCS modifier 12,string,NY_SEDD_2017_CORE
+CPTM1_13,First CPT-4/HCPCS modifier 13,string,NY_SEDD_2017_CORE
+CPTM1_14,First CPT-4/HCPCS modifier 14,string,NY_SEDD_2017_CORE
+CPTM1_15,First CPT-4/HCPCS modifier 15,string,NY_SEDD_2017_CORE
+CPTM1_16,First CPT-4/HCPCS modifier 16,string,NY_SEDD_2017_CORE
+CPTM1_17,First CPT-4/HCPCS modifier 17,string,NY_SEDD_2017_CORE
+CPTM1_18,First CPT-4/HCPCS modifier 18,string,NY_SEDD_2017_CORE
+CPTM1_19,First CPT-4/HCPCS modifier 19,string,NY_SEDD_2017_CORE
+CPTM1_20,First CPT-4/HCPCS modifier 20,string,NY_SEDD_2017_CORE
+CPTM1_21,First CPT-4/HCPCS modifier 21,string,NY_SEDD_2017_CORE
+CPTM1_22,First CPT-4/HCPCS modifier 22,string,NY_SEDD_2017_CORE
+CPTM1_23,First CPT-4/HCPCS modifier 23,string,NY_SEDD_2017_CORE
+CPTM1_24,First CPT-4/HCPCS modifier 24,string,NY_SEDD_2017_CORE
+CPTM1_25,First CPT-4/HCPCS modifier 25,string,NY_SEDD_2017_CORE
+CPTM1_26,First CPT-4/HCPCS modifier 26,string,NY_SEDD_2017_CORE
+CPTM1_27,First CPT-4/HCPCS modifier 27,string,NY_SEDD_2017_CORE
+CPTM1_28,First CPT-4/HCPCS modifier 28,string,NY_SEDD_2017_CORE
+CPTM1_29,First CPT-4/HCPCS modifier 29,string,NY_SEDD_2017_CORE
+CPTM1_30,First CPT-4/HCPCS modifier 30,string,NY_SEDD_2017_CORE
+CPTM1_31,First CPT-4/HCPCS modifier 31,string,NY_SEDD_2017_CORE
+CPTM1_32,First CPT-4/HCPCS modifier 32,string,NY_SEDD_2017_CORE
+CPTM1_33,First CPT-4/HCPCS modifier 33,string,NY_SEDD_2017_CORE
+CPTM1_34,First CPT-4/HCPCS modifier 34,string,NY_SEDD_2017_CORE
+CPTM1_35,First CPT-4/HCPCS modifier 35,string,NY_SEDD_2017_CORE
+CPTM1_36,First CPT-4/HCPCS modifier 36,string,NY_SEDD_2017_CORE
+CPTM1_37,First CPT-4/HCPCS modifier 37,string,NY_SEDD_2017_CORE
+CPTM1_38,First CPT-4/HCPCS modifier 38,string,NY_SEDD_2017_CORE
+CPTM1_39,First CPT-4/HCPCS modifier 39,string,NY_SEDD_2017_CORE
+CPTM1_40,First CPT-4/HCPCS modifier 40,string,NY_SEDD_2017_CORE
+CPTM1_41,First CPT-4/HCPCS modifier 41,string,NY_SEDD_2017_CORE
+CPTM1_42,First CPT-4/HCPCS modifier 42,string,NY_SEDD_2017_CORE
+CPTM1_43,First CPT-4/HCPCS modifier 43,string,NY_SEDD_2017_CORE
+CPTM1_44,First CPT-4/HCPCS modifier 44,string,NY_SEDD_2017_CORE
+CPTM1_45,First CPT-4/HCPCS modifier 45,string,NY_SEDD_2017_CORE
+CPTM1_46,First CPT-4/HCPCS modifier 46,string,NY_SEDD_2017_CORE
+CPTM1_47,First CPT-4/HCPCS modifier 47,string,NY_SEDD_2017_CORE
+CPTM1_48,First CPT-4/HCPCS modifier 48,string,NY_SEDD_2017_CORE
+CPTM1_49,First CPT-4/HCPCS modifier 49,string,NY_SEDD_2017_CORE
+CPTM1_50,First CPT-4/HCPCS modifier 50,string,NY_SEDD_2017_CORE
+CPTM1_51,First CPT-4/HCPCS modifier 51,string,NY_SEDD_2017_CORE
+CPTM1_52,First CPT-4/HCPCS modifier 52,string,NY_SEDD_2017_CORE
+CPTM1_53,First CPT-4/HCPCS modifier 53,string,NY_SEDD_2017_CORE
+CPTM1_54,First CPT-4/HCPCS modifier 54,string,NY_SEDD_2017_CORE
+CPTM1_55,First CPT-4/HCPCS modifier 55,string,NY_SEDD_2017_CORE
+CPTM1_56,First CPT-4/HCPCS modifier 56,string,NY_SEDD_2017_CORE
+CPTM1_57,First CPT-4/HCPCS modifier 57,string,NY_SEDD_2017_CORE
+CPTM1_58,First CPT-4/HCPCS modifier 58,string,NY_SEDD_2017_CORE
+CPTM1_59,First CPT-4/HCPCS modifier 59,string,NY_SEDD_2017_CORE
+CPTM1_60,First CPT-4/HCPCS modifier 60,string,NY_SEDD_2017_CORE
+CPTM1_61,First CPT-4/HCPCS modifier 61,string,NY_SEDD_2017_CORE
+CPTM1_62,First CPT-4/HCPCS modifier 62,string,NY_SEDD_2017_CORE
+CPTM1_63,First CPT-4/HCPCS modifier 63,string,NY_SEDD_2017_CORE
+CPTM1_64,First CPT-4/HCPCS modifier 64,string,NY_SEDD_2017_CORE
+CPTM1_65,First CPT-4/HCPCS modifier 65,string,NY_SEDD_2017_CORE
+CPTM1_66,First CPT-4/HCPCS modifier 66,string,NY_SEDD_2017_CORE
+CPTM1_67,First CPT-4/HCPCS modifier 67,string,NY_SEDD_2017_CORE
+CPTM1_68,First CPT-4/HCPCS modifier 68,string,NY_SEDD_2017_CORE
+CPTM1_69,First CPT-4/HCPCS modifier 69,string,NY_SEDD_2017_CORE
+CPTM1_70,First CPT-4/HCPCS modifier 70,string,NY_SEDD_2017_CORE
+CPTM1_71,First CPT-4/HCPCS modifier 71,string,NY_SEDD_2017_CORE
+CPTM1_72,First CPT-4/HCPCS modifier 72,string,NY_SEDD_2017_CORE
+CPTM1_73,First CPT-4/HCPCS modifier 73,string,NY_SEDD_2017_CORE
+CPTM1_74,First CPT-4/HCPCS modifier 74,string,NY_SEDD_2017_CORE
+CPTM1_75,First CPT-4/HCPCS modifier 75,string,NY_SEDD_2017_CORE
+CPTM1_76,First CPT-4/HCPCS modifier 76,string,NY_SEDD_2017_CORE
+CPTM1_77,First CPT-4/HCPCS modifier 77,string,NY_SEDD_2017_CORE
+CPTM1_78,First CPT-4/HCPCS modifier 78,string,NY_SEDD_2017_CORE
+CPTM1_79,First CPT-4/HCPCS modifier 79,string,NY_SEDD_2017_CORE
+CPTM1_80,First CPT-4/HCPCS modifier 80,string,NY_SEDD_2017_CORE
+CPTM1_81,First CPT-4/HCPCS modifier 81,string,NY_SEDD_2017_CORE
+CPTM1_82,First CPT-4/HCPCS modifier 82,string,NY_SEDD_2017_CORE
+CPTM1_83,First CPT-4/HCPCS modifier 83,string,NY_SEDD_2017_CORE
+CPTM1_84,First CPT-4/HCPCS modifier 84,string,NY_SEDD_2017_CORE
+CPTM1_85,First CPT-4/HCPCS modifier 85,string,NY_SEDD_2017_CORE
+CPTM1_86,First CPT-4/HCPCS modifier 86,string,NY_SEDD_2017_CORE
+CPTM1_87,First CPT-4/HCPCS modifier 87,string,NY_SEDD_2017_CORE
+CPTM1_88,First CPT-4/HCPCS modifier 88,string,NY_SEDD_2017_CORE
+CPTM1_89,First CPT-4/HCPCS modifier 89,string,NY_SEDD_2017_CORE
+CPTM1_90,First CPT-4/HCPCS modifier 90,string,NY_SEDD_2017_CORE
+CPTM1_91,First CPT-4/HCPCS modifier 91,string,NY_SEDD_2017_CORE
+CPTM1_92,First CPT-4/HCPCS modifier 92,string,NY_SEDD_2017_CORE
+CPTM1_93,First CPT-4/HCPCS modifier 93,string,NY_SEDD_2017_CORE
+CPTM1_94,First CPT-4/HCPCS modifier 94,string,NY_SEDD_2017_CORE
+CPTM1_95,First CPT-4/HCPCS modifier 95,string,NY_SEDD_2017_CORE
+CPTM1_96,First CPT-4/HCPCS modifier 96,string,NY_SEDD_2017_CORE
+CPTM1_97,First CPT-4/HCPCS modifier 97,string,NY_SEDD_2017_CORE
+CPTM1_98,First CPT-4/HCPCS modifier 98,string,NY_SEDD_2017_CORE
+CPTM1_99,First CPT-4/HCPCS modifier 99,string,NY_SEDD_2017_CORE
+CPTM1_100,First CPT-4/HCPCS modifier 100,string,NY_SEDD_2017_CORE
+CPTM2_1,Second CPT-4/HCPCS modifier 1,string,NY_SEDD_2017_CORE
+CPTM2_2,Second CPT-4/HCPCS modifier 2,string,NY_SEDD_2017_CORE
+CPTM2_3,Second CPT-4/HCPCS modifier 3,string,NY_SEDD_2017_CORE
+CPTM2_4,Second CPT-4/HCPCS modifier 4,string,NY_SEDD_2017_CORE
+CPTM2_5,Second CPT-4/HCPCS modifier 5,string,NY_SEDD_2017_CORE
+CPTM2_6,Second CPT-4/HCPCS modifier 6,string,NY_SEDD_2017_CORE
+CPTM2_7,Second CPT-4/HCPCS modifier 7,string,NY_SEDD_2017_CORE
+CPTM2_8,Second CPT-4/HCPCS modifier 8,string,NY_SEDD_2017_CORE
+CPTM2_9,Second CPT-4/HCPCS modifier 9,string,NY_SEDD_2017_CORE
+CPTM2_10,Second CPT-4/HCPCS modifier 10,string,NY_SEDD_2017_CORE
+CPTM2_11,Second CPT-4/HCPCS modifier 11,string,NY_SEDD_2017_CORE
+CPTM2_12,Second CPT-4/HCPCS modifier 12,string,NY_SEDD_2017_CORE
+CPTM2_13,Second CPT-4/HCPCS modifier 13,string,NY_SEDD_2017_CORE
+CPTM2_14,Second CPT-4/HCPCS modifier 14,string,NY_SEDD_2017_CORE
+CPTM2_15,Second CPT-4/HCPCS modifier 15,string,NY_SEDD_2017_CORE
+CPTM2_16,Second CPT-4/HCPCS modifier 16,string,NY_SEDD_2017_CORE
+CPTM2_17,Second CPT-4/HCPCS modifier 17,string,NY_SEDD_2017_CORE
+CPTM2_18,Second CPT-4/HCPCS modifier 18,string,NY_SEDD_2017_CORE
+CPTM2_19,Second CPT-4/HCPCS modifier 19,string,NY_SEDD_2017_CORE
+CPTM2_20,Second CPT-4/HCPCS modifier 20,string,NY_SEDD_2017_CORE
+CPTM2_21,Second CPT-4/HCPCS modifier 21,string,NY_SEDD_2017_CORE
+CPTM2_22,Second CPT-4/HCPCS modifier 22,string,NY_SEDD_2017_CORE
+CPTM2_23,Second CPT-4/HCPCS modifier 23,string,NY_SEDD_2017_CORE
+CPTM2_24,Second CPT-4/HCPCS modifier 24,string,NY_SEDD_2017_CORE
+CPTM2_25,Second CPT-4/HCPCS modifier 25,string,NY_SEDD_2017_CORE
+CPTM2_26,Second CPT-4/HCPCS modifier 26,string,NY_SEDD_2017_CORE
+CPTM2_27,Second CPT-4/HCPCS modifier 27,string,NY_SEDD_2017_CORE
+CPTM2_28,Second CPT-4/HCPCS modifier 28,string,NY_SEDD_2017_CORE
+CPTM2_29,Second CPT-4/HCPCS modifier 29,string,NY_SEDD_2017_CORE
+CPTM2_30,Second CPT-4/HCPCS modifier 30,string,NY_SEDD_2017_CORE
+CPTM2_31,Second CPT-4/HCPCS modifier 31,string,NY_SEDD_2017_CORE
+CPTM2_32,Second CPT-4/HCPCS modifier 32,string,NY_SEDD_2017_CORE
+CPTM2_33,Second CPT-4/HCPCS modifier 33,string,NY_SEDD_2017_CORE
+CPTM2_34,Second CPT-4/HCPCS modifier 34,string,NY_SEDD_2017_CORE
+CPTM2_35,Second CPT-4/HCPCS modifier 35,string,NY_SEDD_2017_CORE
+CPTM2_36,Second CPT-4/HCPCS modifier 36,string,NY_SEDD_2017_CORE
+CPTM2_37,Second CPT-4/HCPCS modifier 37,string,NY_SEDD_2017_CORE
+CPTM2_38,Second CPT-4/HCPCS modifier 38,string,NY_SEDD_2017_CORE
+CPTM2_39,Second CPT-4/HCPCS modifier 39,string,NY_SEDD_2017_CORE
+CPTM2_40,Second CPT-4/HCPCS modifier 40,string,NY_SEDD_2017_CORE
+CPTM2_41,Second CPT-4/HCPCS modifier 41,string,NY_SEDD_2017_CORE
+CPTM2_42,Second CPT-4/HCPCS modifier 42,string,NY_SEDD_2017_CORE
+CPTM2_43,Second CPT-4/HCPCS modifier 43,string,NY_SEDD_2017_CORE
+CPTM2_44,Second CPT-4/HCPCS modifier 44,string,NY_SEDD_2017_CORE
+CPTM2_45,Second CPT-4/HCPCS modifier 45,string,NY_SEDD_2017_CORE
+CPTM2_46,Second CPT-4/HCPCS modifier 46,string,NY_SEDD_2017_CORE
+CPTM2_47,Second CPT-4/HCPCS modifier 47,string,NY_SEDD_2017_CORE
+CPTM2_48,Second CPT-4/HCPCS modifier 48,string,NY_SEDD_2017_CORE
+CPTM2_49,Second CPT-4/HCPCS modifier 49,string,NY_SEDD_2017_CORE
+CPTM2_50,Second CPT-4/HCPCS modifier 50,string,NY_SEDD_2017_CORE
+CPTM2_51,Second CPT-4/HCPCS modifier 51,string,NY_SEDD_2017_CORE
+CPTM2_52,Second CPT-4/HCPCS modifier 52,string,NY_SEDD_2017_CORE
+CPTM2_53,Second CPT-4/HCPCS modifier 53,string,NY_SEDD_2017_CORE
+CPTM2_54,Second CPT-4/HCPCS modifier 54,string,NY_SEDD_2017_CORE
+CPTM2_55,Second CPT-4/HCPCS modifier 55,string,NY_SEDD_2017_CORE
+CPTM2_56,Second CPT-4/HCPCS modifier 56,string,NY_SEDD_2017_CORE
+CPTM2_57,Second CPT-4/HCPCS modifier 57,string,NY_SEDD_2017_CORE
+CPTM2_58,Second CPT-4/HCPCS modifier 58,string,NY_SEDD_2017_CORE
+CPTM2_59,Second CPT-4/HCPCS modifier 59,string,NY_SEDD_2017_CORE
+CPTM2_60,Second CPT-4/HCPCS modifier 60,string,NY_SEDD_2017_CORE
+CPTM2_61,Second CPT-4/HCPCS modifier 61,string,NY_SEDD_2017_CORE
+CPTM2_62,Second CPT-4/HCPCS modifier 62,string,NY_SEDD_2017_CORE
+CPTM2_63,Second CPT-4/HCPCS modifier 63,string,NY_SEDD_2017_CORE
+CPTM2_64,Second CPT-4/HCPCS modifier 64,string,NY_SEDD_2017_CORE
+CPTM2_65,Second CPT-4/HCPCS modifier 65,string,NY_SEDD_2017_CORE
+CPTM2_66,Second CPT-4/HCPCS modifier 66,string,NY_SEDD_2017_CORE
+CPTM2_67,Second CPT-4/HCPCS modifier 67,string,NY_SEDD_2017_CORE
+CPTM2_68,Second CPT-4/HCPCS modifier 68,string,NY_SEDD_2017_CORE
+CPTM2_69,Second CPT-4/HCPCS modifier 69,string,NY_SEDD_2017_CORE
+CPTM2_70,Second CPT-4/HCPCS modifier 70,string,NY_SEDD_2017_CORE
+CPTM2_71,Second CPT-4/HCPCS modifier 71,string,NY_SEDD_2017_CORE
+CPTM2_72,Second CPT-4/HCPCS modifier 72,string,NY_SEDD_2017_CORE
+CPTM2_73,Second CPT-4/HCPCS modifier 73,string,NY_SEDD_2017_CORE
+CPTM2_74,Second CPT-4/HCPCS modifier 74,string,NY_SEDD_2017_CORE
+CPTM2_75,Second CPT-4/HCPCS modifier 75,string,NY_SEDD_2017_CORE
+CPTM2_76,Second CPT-4/HCPCS modifier 76,string,NY_SEDD_2017_CORE
+CPTM2_77,Second CPT-4/HCPCS modifier 77,string,NY_SEDD_2017_CORE
+CPTM2_78,Second CPT-4/HCPCS modifier 78,string,NY_SEDD_2017_CORE
+CPTM2_79,Second CPT-4/HCPCS modifier 79,string,NY_SEDD_2017_CORE
+CPTM2_80,Second CPT-4/HCPCS modifier 80,string,NY_SEDD_2017_CORE
+CPTM2_81,Second CPT-4/HCPCS modifier 81,string,NY_SEDD_2017_CORE
+CPTM2_82,Second CPT-4/HCPCS modifier 82,string,NY_SEDD_2017_CORE
+CPTM2_83,Second CPT-4/HCPCS modifier 83,string,NY_SEDD_2017_CORE
+CPTM2_84,Second CPT-4/HCPCS modifier 84,string,NY_SEDD_2017_CORE
+CPTM2_85,Second CPT-4/HCPCS modifier 85,string,NY_SEDD_2017_CORE
+CPTM2_86,Second CPT-4/HCPCS modifier 86,string,NY_SEDD_2017_CORE
+CPTM2_87,Second CPT-4/HCPCS modifier 87,string,NY_SEDD_2017_CORE
+CPTM2_88,Second CPT-4/HCPCS modifier 88,string,NY_SEDD_2017_CORE
+CPTM2_89,Second CPT-4/HCPCS modifier 89,string,NY_SEDD_2017_CORE
+CPTM2_90,Second CPT-4/HCPCS modifier 90,string,NY_SEDD_2017_CORE
+CPTM2_91,Second CPT-4/HCPCS modifier 91,string,NY_SEDD_2017_CORE
+CPTM2_92,Second CPT-4/HCPCS modifier 92,string,NY_SEDD_2017_CORE
+CPTM2_93,Second CPT-4/HCPCS modifier 93,string,NY_SEDD_2017_CORE
+CPTM2_94,Second CPT-4/HCPCS modifier 94,string,NY_SEDD_2017_CORE
+CPTM2_95,Second CPT-4/HCPCS modifier 95,string,NY_SEDD_2017_CORE
+CPTM2_96,Second CPT-4/HCPCS modifier 96,string,NY_SEDD_2017_CORE
+CPTM2_97,Second CPT-4/HCPCS modifier 97,string,NY_SEDD_2017_CORE
+CPTM2_98,Second CPT-4/HCPCS modifier 98,string,NY_SEDD_2017_CORE
+CPTM2_99,Second CPT-4/HCPCS modifier 99,string,NY_SEDD_2017_CORE
+CPTM2_100,Second CPT-4/HCPCS modifier 100,string,NY_SEDD_2017_CORE
+DaysToEvent,Days from 'start date' to admission,int32,NY_SEDD_2017_CORE
+DHOUR,Discharge Hour,int32,NY_SEDD_2017_CORE
+DIED,Died during hospitalization,int32,NY_SEDD_2017_CORE
+DISP_X,Disposition of patient (as received from source),string,NY_SEDD_2017_CORE
+DISPUB04,Disposition of patient (UB-04 standard coding),int32,NY_SEDD_2017_CORE
+DISPUNIFORM,Disposition of patient (uniform),int32,NY_SEDD_2017_CORE
+DMONTH,Discharge month,int32,NY_SEDD_2017_CORE
+DQTR,Discharge quarter,int32,NY_SEDD_2017_CORE
+DSHOSPID,Data source hospital identifier,string,NY_SEDD_2017_CORE
+DURATION,Elapsed time for hospital care in hours and minutes,int32,NY_SEDD_2017_CORE
+DXVER,Diagnosis Version,int32,NY_SEDD_2017_CORE
+FEMALE,Indicator of sex,int32,NY_SEDD_2017_CORE
+HCUP_ED,HCUP Emergency Department service indicator,int32,NY_SEDD_2017_CORE
+HCUP_OS,HCUP Observation Stay service indicator,int32,NY_SEDD_2017_CORE
+HISPANIC,Hispanic ethnicity (uniform),int32,NY_SEDD_2017_CORE
+HISPANIC_X,Hispanic ethnicity (as received from source),string,NY_SEDD_2017_CORE
+Homeless,Indicator that patient is homeless,int32,NY_SEDD_2017_CORE
+HOSP_NPI,Hospital NPI,string,NY_SEDD_2017_CORE
+HOSPST,Hospital state postal code,string,NY_SEDD_2017_CORE
+I10_DX_Visit_Reason1,ICD-10-CM Reason for visit diagnosis 1,string,NY_SEDD_2017_CORE
+I10_DX_Visit_Reason2,ICD-10-CM Reason for visit diagnosis 2,string,NY_SEDD_2017_CORE
+I10_DX_Visit_Reason3,ICD-10-CM Reason for visit diagnosis 3,string,NY_SEDD_2017_CORE
+I10_DX1,ICD-10-CM Diagnosis 1,string,NY_SEDD_2017_CORE
+I10_DX2,ICD-10-CM Diagnosis 2,string,NY_SEDD_2017_CORE
+I10_DX3,ICD-10-CM Diagnosis 3,string,NY_SEDD_2017_CORE
+I10_DX4,ICD-10-CM Diagnosis 4,string,NY_SEDD_2017_CORE
+I10_DX5,ICD-10-CM Diagnosis 5,string,NY_SEDD_2017_CORE
+I10_DX6,ICD-10-CM Diagnosis 6,string,NY_SEDD_2017_CORE
+I10_DX7,ICD-10-CM Diagnosis 7,string,NY_SEDD_2017_CORE
+I10_DX8,ICD-10-CM Diagnosis 8,string,NY_SEDD_2017_CORE
+I10_DX9,ICD-10-CM Diagnosis 9,string,NY_SEDD_2017_CORE
+I10_DX10,ICD-10-CM Diagnosis 10,string,NY_SEDD_2017_CORE
+I10_DX11,ICD-10-CM Diagnosis 11,string,NY_SEDD_2017_CORE
+I10_DX12,ICD-10-CM Diagnosis 12,string,NY_SEDD_2017_CORE
+I10_DX13,ICD-10-CM Diagnosis 13,string,NY_SEDD_2017_CORE
+I10_DX14,ICD-10-CM Diagnosis 14,string,NY_SEDD_2017_CORE
+I10_DX15,ICD-10-CM Diagnosis 15,string,NY_SEDD_2017_CORE
+I10_DX16,ICD-10-CM Diagnosis 16,string,NY_SEDD_2017_CORE
+I10_DX17,ICD-10-CM Diagnosis 17,string,NY_SEDD_2017_CORE
+I10_DX18,ICD-10-CM Diagnosis 18,string,NY_SEDD_2017_CORE
+I10_DX19,ICD-10-CM Diagnosis 19,string,NY_SEDD_2017_CORE
+I10_DX20,ICD-10-CM Diagnosis 20,string,NY_SEDD_2017_CORE
+I10_DX21,ICD-10-CM Diagnosis 21,string,NY_SEDD_2017_CORE
+I10_DX22,ICD-10-CM Diagnosis 22,string,NY_SEDD_2017_CORE
+I10_DX23,ICD-10-CM Diagnosis 23,string,NY_SEDD_2017_CORE
+I10_DX24,ICD-10-CM Diagnosis 24,string,NY_SEDD_2017_CORE
+I10_DX25,ICD-10-CM Diagnosis 25,string,NY_SEDD_2017_CORE
+I10_DX26,ICD-10-CM Diagnosis 26,string,NY_SEDD_2017_CORE
+I10_DX27,ICD-10-CM Diagnosis 27,string,NY_SEDD_2017_CORE
+I10_DX28,ICD-10-CM Diagnosis 28,string,NY_SEDD_2017_CORE
+I10_DX29,ICD-10-CM Diagnosis 29,string,NY_SEDD_2017_CORE
+I10_DX30,ICD-10-CM Diagnosis 30,string,NY_SEDD_2017_CORE
+I10_DX31,ICD-10-CM Diagnosis 31,string,NY_SEDD_2017_CORE
+I10_DX32,ICD-10-CM Diagnosis 32,string,NY_SEDD_2017_CORE
+I10_DX33,ICD-10-CM Diagnosis 33,string,NY_SEDD_2017_CORE
+I10_NDX,ICD-10-CM Number of diagnoses on this record,int32,NY_SEDD_2017_CORE
+I10_PROCTYPE,ICD-10-PCS Procedure type indicator,int32,NY_SEDD_2017_CORE
+KEY,HCUP record identifier,double,NY_SEDD_2017_CORE
+LOS,Length of stay (cleaned),int32,NY_SEDD_2017_CORE
+LOS_X,Length of stay (as received from source),int32,NY_SEDD_2017_CORE
+MDNUM1_R,Physician 1 number (re-identified),int32,NY_SEDD_2017_CORE
+MDNUM2_R,Physician 2 number (re-identified),int32,NY_SEDD_2017_CORE
+MEDINCSTQ,Median household income state quartile for patient ZIP Code,int32,NY_SEDD_2017_CORE
+NCPT,Number of CPT/HCPCS procedures for this visit,int32,NY_SEDD_2017_CORE
+OPservice,Indicator of outpatient service (as received from source),string,NY_SEDD_2017_CORE
+ORTIME,Operating room time in minutes,int32,NY_SEDD_2017_CORE
+OS_TIME,Observation stay time summed from UNITS,double,NY_SEDD_2017_CORE
+PAY1,Primary expected payer (uniform),int32,NY_SEDD_2017_CORE
+PAY1_X,Primary expected payer (as received from source),string,NY_SEDD_2017_CORE
+PAY2,Secondary expected payer (uniform),int32,NY_SEDD_2017_CORE
+PAY2_X,Secondary expected payer (as received from source),string,NY_SEDD_2017_CORE
+PAY3,Tertiary expected payer (uniform),int32,NY_SEDD_2017_CORE
+PAY3_X,Tertiary expected payer (as received from source),string,NY_SEDD_2017_CORE
+PL_CBSA,Patient location: Core Based Statistical Area (CBSA),int32,NY_SEDD_2017_CORE
+PL_NCHS,Patient Location: NCHS Urban-Rural Code,int32,NY_SEDD_2017_CORE
+PL_RUCC,Patient location: Rural-Urban Continuum Codes (RUCC),int32,NY_SEDD_2017_CORE
+PL_UIC,Patient location: Urban Influence Codes,int32,NY_SEDD_2017_CORE
+PL_UR_CAT4,Patient Location: Urban-Rural 4 Categories,int32,NY_SEDD_2017_CORE
+PSTATE,Patient State postal code,string,NY_SEDD_2017_CORE
+PSTCO,Patient state/county FIPS code,int32,NY_SEDD_2017_CORE
+PSTCO2,"Patient state/county FIPS code, possibly derived from ZIP Code",int32,NY_SEDD_2017_CORE
+RACE,Race (uniform),int32,NY_SEDD_2017_CORE
+RACE_X,Race (as received from source),string,NY_SEDD_2017_CORE
+STATE_AS,State Ambulatory Surgery service indicator,int32,NY_SEDD_2017_CORE
+STATE_ED,State Emergency Department service indicator,int32,NY_SEDD_2017_CORE
+STATE_OS,State Observation Stay service indicator,int32,NY_SEDD_2017_CORE
+TOTCHG,Total charges (cleaned),double,NY_SEDD_2017_CORE
+TOTCHG_X,Total charges (as received from source),double,NY_SEDD_2017_CORE
+VisitLink,Visit linkage variable,int32,NY_SEDD_2017_CORE
+YEAR,Calendar year,int32,NY_SEDD_2017_CORE
+ZIP,Patient ZIP Code,string,NY_SEDD_2017_CORE
+ZIP3,"Patient ZIP Code, first 3 digits",string,NY_SEDD_2017_CORE
+ZIPINC_QRTL,Median household income national quartile for patient ZIP Code,int32,NY_SEDD_2017_CORE
+AYEAR,Admission year,int32,NY_SEDD_2017_CORE
+BMONTH,Birth month,int32,NY_SEDD_2017_CORE
+BYEAR,Birth year,int32,NY_SEDD_2017_CORE

@@ -1,0 +1,6 @@
+*.dta
+*.acs
+*.parquet
+*.Rproj.user
+*.asc
+.Rproj.user

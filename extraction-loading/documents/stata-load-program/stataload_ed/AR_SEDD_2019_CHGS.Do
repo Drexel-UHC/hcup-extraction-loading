@@ -1,0 +1,43 @@
+/*****************************************************************************
+* Creation Date: 08/19/2021   
+* AR_SEDD_2019_CHGS.Do
+* This program will load the 2019 AR ASCII CHGS File into Stata.
+* Because Stata loads the entire file into memory, it may not be possible
+* to load every data element for large files.  If necessary, edit this
+* program to change the memory size or to load only selected data elements.
+*****************************************************************************/
+
+***************************************************************;
+* ----------------------------------------------------------- *;
+* |  NOTICE: Use of HCUP data constitutes acceptance of the | *;
+* |  terms and conditions of the HCUP Data Use Agreement.   | *;
+* ----------------------------------------------------------- *;
+***************************************************************;
+
+
+*** Set available memory size ***
+set mem 500m
+
+*** Read data elements from the ASCII file ***
+*** Skip the first two lines from the ASCII file i.e. infix 3 firstlineoffile ***
+infix 3 firstlineoffile                            ///
+      double CHARGE                       1-  12   ///
+      double KEY                         13-  27   ///
+      double RATE                        28-  36   ///
+      str    REVCODE                     37-  40   ///
+      double UNITS                       41-  51   ///
+      using  "AR_SEDD_2019_CHGS.ASC"
+
+***  Assign labels to the data elements ***
+label var CHARGE                   "Line item charges (as received from source)"
+label var KEY                      "HCUP record identifier"
+label var RATE                     "Line item rate (as received from source)"
+label var REVCODE                  "Line item revenue code (as received from source)"
+label var UNITS                    "Line item units (as received from source)"
+
+*** Convert special values to missing values ***
+recode CHARGE                    (-99999999.99 -88888888.88 -66666666.66=.)
+recode RATE                      (-99999.99 -88888.88 -66666.66=.)
+recode UNITS                     (-9999999.99 -8888888.88 -6666666.66=.)
+
+save "AR_SEDD_2019_CHGS.dta", replace

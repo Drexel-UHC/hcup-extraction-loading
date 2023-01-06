@@ -1,0 +1,152 @@
+---
+title: "HCUP NY 2017-2018 EDA"
+author: "Ran Li"
+date: "12/08/2022"
+format: 
+  html:
+    toc: true
+    self-contained: true
+editor: visual
+editor_options: 
+  chunk_output_type: console
+execute: 
+  warning: false
+  error: false  
+  echo: false
+---
+
+## Overview
+
+```{r}
+#| echo: false
+
+pivot_vars = function(df){
+  df %>% 
+    add_count(var) %>% 
+    arrange(desc(n), var) %>% 
+    select(var,  dataset_id) %>% 
+    mutate(value = T) %>% 
+    pivot_wider(names_from = var, values_from = value)
+}
+
+```
+
+Some exploratory data analysis just on the HCUP metadata. Below
+
+```{r}
+library(tidyverse)
+library(reactable)
+df_codebooks = read_csv("../../clean/df_codebooks.csv") %>% 
+  rowwise() %>% 
+  mutate(split = str_split(dataset_id,pattern = "_"),
+         state = split[[1]],
+         database = split[[2]],
+         year = split[[3]],
+         dataset = split[[4]]
+         )  %>% 
+  select(dataset_id, var, var_label, value_type, everything(), - split)
+
+## Summarize number of variables
+df_codebooks %>% 
+  count(database,dataset, year, name = 'n_vars') %>% 
+  mutate(year  = paste0("n_var_",year) ) %>% 
+  # mutate(value = T) %>% 
+  pivot_wider(names_from = year, values_from = n_vars) %>% 
+  reactable()
+
+```
+
+
+- **Number of variables in CORE datasets change by year. Increasing a lot particularly for SEDD from 2017 to 2018.**
+- CHGS datasets don't change much.
+
+
+Lets look into these more closely below
+
+
+## CHGS
+
+
+```{r}
+df_codebooks %>% 
+  filter(dataset == "CHGS") %>% 
+  pivot_vars()%>% 
+  reactable()
+```
+
+
+- 4 CHGS fields for both SEDD and SID:
+- 4 CHGS fields unique to CHGS
+- These remain constant between 2017 and 2018
+
+## SEDD CORE
+
+```{r}
+## Table of vars by year 
+df_sedd_core = df_codebooks %>% 
+  filter( database=="SEDD", dataset == "CORE") %>% 
+  arrange(var) %>% 
+  select(var, year) %>% 
+  mutate(value = T) %>% 
+  pivot_wider(names_from = year, values_from = value)
+
+
+## Summary of vars in years
+df_sedd_core %>% 
+  mutate(var_short = str_remove(var, "[0-9]*$"),
+         var_appendix = str_extract(var,"[0-9]*$")) %>%
+  add_count(var_short, name = 'n_var') %>%   
+  group_by(var_short,n_var, `2017`, `2018`) %>% 
+  summarize(var_appendix = paste(var_appendix, collapse = ", ") %>% str_sub(1,15)) %>% 
+  ungroup() %>% 
+  arrange(desc(n_var)) %>% 
+  reactable()
+
+```
+
+- The SEDD Core table is huge with 603 columns in 2017 and 1106 colums in 2018.
+- The majority of these columns are some type of diagnosis codes including:
+   - **CPT**###: CPT/HCPCS procedure code
+   - **COTCSS**###: The CCS-Services and Procedures provides a method for classifying Healthcare Common Procedure Coding System (HCPCS) codes into clinically meaningful categories.
+   - **CPTDAY**###: Number of days from admission to CPT ###
+   - **CPTM1_**###: First CPT-4/HCPCS modifier ###
+   - **CPTM1_**###: Second CPT-4/HCPCS modifier ###
+   - **I10_DX**##: 	ICD-10-CM Diagnosis ##
+- In 2018 there are a lot of new codes for the above column types; these account for most of the changes in variables between years
+- There are also small changes in other variables such as `MARITALSTATUS_X` or `PointOfOriginUB`
+   
+
+#### SID CORE
+
+```{r}
+## Table of vars by year 
+df_sid_core = df_codebooks %>% 
+  filter( database=="SID", dataset == "CORE") %>% 
+  arrange(var) %>% 
+  select(var, year) %>% 
+  mutate(value = T) %>% 
+  pivot_wider(names_from = year, values_from = value)
+
+
+## Summary of vars in years
+df_sid_core %>% 
+  mutate(var_short = str_remove(var, "[0-9]*$"),
+         var_appendix = str_extract(var,"[0-9]*$")) %>%
+  add_count(var_short, name = 'n_var') %>%   
+  group_by(var_short,n_var, `2017`, `2018`) %>% 
+  summarize(var_appendix = paste(var_appendix, collapse = ", ") %>% str_sub(1,15)) %>% 
+  ungroup() %>% 
+  arrange(desc(n_var)) %>% 
+  reactable()
+
+```
+
+- The SID Core table is large with 251 columns in 2017 and 255 columns in 2018.
+- The majority of these columns are some type of diagnosis codes including:
+   - **DXPOA**###: Diagnosis ##, present on admission indicator
+   - **I10_DX**##: ICD-10-CM Diagnosis ##
+   - **I10_PR**###: ICD-10-PCS Procedure  ##
+   - **PRDAY**###: Number of days from admission to I10_PR##
+   - **PRMONTH**###: Month of procedure ##
+   - **PRYEAR**###: Year of procedure ##
+- In 2018 there only four news codes for the above column types; these account for most of the changes in variables between years

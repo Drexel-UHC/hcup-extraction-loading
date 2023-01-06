@@ -1,0 +1,9 @@
+var,var_label,value_type,dataset_id
+CHARGE,Line item charges (as received from source),double,NY_SEDD_2017_CHGS
+CPTHCPCS,Line item CPT-4/HCPCS procedure code (as received from source),string,NY_SEDD_2017_CHGS
+CPTMod1,Line item CPT-4/HCPCS first modifier (as received from source),string,NY_SEDD_2017_CHGS
+CPTMod2,Line item CPT-4/HCPCS second modifier (as received from source),string,NY_SEDD_2017_CHGS
+KEY,HCUP record identifier,double,NY_SEDD_2017_CHGS
+REVCODE,Line item revenue code (as received from source),string,NY_SEDD_2017_CHGS
+SERVDAY,Line item days from admission date,int32,NY_SEDD_2017_CHGS
+UNITS,Line item units (as received from source),double,NY_SEDD_2017_CHGS

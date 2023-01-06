@@ -1,0 +1,5 @@
+var,var_label,value_type,dataset_id
+CHARGE,Line item charges (as received from source),double,NY_SID_2017_CHGS
+KEY,HCUP record identifier,double,NY_SID_2017_CHGS
+REVCODE,Line item revenue code (as received from source),string,NY_SID_2017_CHGS
+UNITS,Line item units (as received from source),double,NY_SID_2017_CHGS

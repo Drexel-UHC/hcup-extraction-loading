@@ -1,0 +1,780 @@
+/*****************************************************************************
+* Creation Date: 07/25/2018   
+* WI_SEDD_2016_CORE.Do
+* This program will load the 2016 WI ASCII CORE File into Stata.
+* Because Stata loads the entire file into memory, it may not be possible
+* to load every data element for large files.  If necessary, edit this
+* program to change the memory size or to load only selected data elements.
+*****************************************************************************/
+
+***************************************************************;
+* ----------------------------------------------------------- *;
+* |  NOTICE: Use of HCUP data constitutes acceptance of the | *;
+* |  terms and conditions of the HCUP Data Use Agreement.   | *;
+* ----------------------------------------------------------- *;
+***************************************************************;
+
+
+*** Set available memory size ***
+set mem 500m
+
+*** Read data elements from the ASCII file ***
+*** Skip the first two lines from the ASCII file i.e. infix 3 firstlineoffile ***
+infix 3 firstlineoffile                            ///
+      int    AGE                          1-   3   ///
+      int    AGEDAY                       4-   6   ///
+      int    AGEMONTH                     7-   9   ///
+      byte   AMONTH                      10-  11   ///
+      byte   ATYPE                       12-  13   ///
+      byte   AWEEKEND                    14-  15   ///
+      str    BILLTYPE                    16-  19   ///
+      str    CPT1                        20-  24   ///
+      str    CPT2                        25-  29   ///
+      str    CPT3                        30-  34   ///
+      str    CPT4                        35-  39   ///
+      str    CPT5                        40-  44   ///
+      str    CPT6                        45-  49   ///
+      str    CPT7                        50-  54   ///
+      str    CPT8                        55-  59   ///
+      str    CPT9                        60-  64   ///
+      str    CPT10                       65-  69   ///
+      str    CPT11                       70-  74   ///
+      str    CPT12                       75-  79   ///
+      str    CPT13                       80-  84   ///
+      str    CPT14                       85-  89   ///
+      str    CPT15                       90-  94   ///
+      str    CPT16                       95-  99   ///
+      str    CPT17                      100- 104   ///
+      str    CPT18                      105- 109   ///
+      str    CPT19                      110- 114   ///
+      str    CPT20                      115- 119   ///
+      str    CPT21                      120- 124   ///
+      str    CPT22                      125- 129   ///
+      str    CPT23                      130- 134   ///
+      str    CPT24                      135- 139   ///
+      str    CPT25                      140- 144   ///
+      str    CPT26                      145- 149   ///
+      str    CPT27                      150- 154   ///
+      str    CPT28                      155- 159   ///
+      str    CPT29                      160- 164   ///
+      str    CPT30                      165- 169   ///
+      str    CPT31                      170- 174   ///
+      str    CPT32                      175- 179   ///
+      str    CPT33                      180- 184   ///
+      str    CPT34                      185- 189   ///
+      str    CPT35                      190- 194   ///
+      str    CPT36                      195- 199   ///
+      str    CPT37                      200- 204   ///
+      str    CPT38                      205- 209   ///
+      str    CPT39                      210- 214   ///
+      str    CPT40                      215- 219   ///
+      str    CPT41                      220- 224   ///
+      str    CPT42                      225- 229   ///
+      str    CPT43                      230- 234   ///
+      str    CPT44                      235- 239   ///
+      str    CPT45                      240- 244   ///
+      str    CPT46                      245- 249   ///
+      str    CPT47                      250- 254   ///
+      str    CPT48                      255- 259   ///
+      str    CPT49                      260- 264   ///
+      str    CPT50                      265- 269   ///
+      int    CPTCCS1                    270- 272   ///
+      int    CPTCCS2                    273- 275   ///
+      int    CPTCCS3                    276- 278   ///
+      int    CPTCCS4                    279- 281   ///
+      int    CPTCCS5                    282- 284   ///
+      int    CPTCCS6                    285- 287   ///
+      int    CPTCCS7                    288- 290   ///
+      int    CPTCCS8                    291- 293   ///
+      int    CPTCCS9                    294- 296   ///
+      int    CPTCCS10                   297- 299   ///
+      int    CPTCCS11                   300- 302   ///
+      int    CPTCCS12                   303- 305   ///
+      int    CPTCCS13                   306- 308   ///
+      int    CPTCCS14                   309- 311   ///
+      int    CPTCCS15                   312- 314   ///
+      int    CPTCCS16                   315- 317   ///
+      int    CPTCCS17                   318- 320   ///
+      int    CPTCCS18                   321- 323   ///
+      int    CPTCCS19                   324- 326   ///
+      int    CPTCCS20                   327- 329   ///
+      int    CPTCCS21                   330- 332   ///
+      int    CPTCCS22                   333- 335   ///
+      int    CPTCCS23                   336- 338   ///
+      int    CPTCCS24                   339- 341   ///
+      int    CPTCCS25                   342- 344   ///
+      int    CPTCCS26                   345- 347   ///
+      int    CPTCCS27                   348- 350   ///
+      int    CPTCCS28                   351- 353   ///
+      int    CPTCCS29                   354- 356   ///
+      int    CPTCCS30                   357- 359   ///
+      int    CPTCCS31                   360- 362   ///
+      int    CPTCCS32                   363- 365   ///
+      int    CPTCCS33                   366- 368   ///
+      int    CPTCCS34                   369- 371   ///
+      int    CPTCCS35                   372- 374   ///
+      int    CPTCCS36                   375- 377   ///
+      int    CPTCCS37                   378- 380   ///
+      int    CPTCCS38                   381- 383   ///
+      int    CPTCCS39                   384- 386   ///
+      int    CPTCCS40                   387- 389   ///
+      int    CPTCCS41                   390- 392   ///
+      int    CPTCCS42                   393- 395   ///
+      int    CPTCCS43                   396- 398   ///
+      int    CPTCCS44                   399- 401   ///
+      int    CPTCCS45                   402- 404   ///
+      int    CPTCCS46                   405- 407   ///
+      int    CPTCCS47                   408- 410   ///
+      int    CPTCCS48                   411- 413   ///
+      int    CPTCCS49                   414- 416   ///
+      int    CPTCCS50                   417- 419   ///
+      int    CPTDAY1                    420- 422   ///
+      str    CPTM1_1                    423- 424   ///
+      str    CPTM1_2                    425- 426   ///
+      str    CPTM1_3                    427- 428   ///
+      str    CPTM1_4                    429- 430   ///
+      str    CPTM1_5                    431- 432   ///
+      str    CPTM1_6                    433- 434   ///
+      str    CPTM1_7                    435- 436   ///
+      str    CPTM1_8                    437- 438   ///
+      str    CPTM1_9                    439- 440   ///
+      str    CPTM1_10                   441- 442   ///
+      str    CPTM1_11                   443- 444   ///
+      str    CPTM1_12                   445- 446   ///
+      str    CPTM1_13                   447- 448   ///
+      str    CPTM1_14                   449- 450   ///
+      str    CPTM1_15                   451- 452   ///
+      str    CPTM1_16                   453- 454   ///
+      str    CPTM1_17                   455- 456   ///
+      str    CPTM1_18                   457- 458   ///
+      str    CPTM1_19                   459- 460   ///
+      str    CPTM1_20                   461- 462   ///
+      str    CPTM1_21                   463- 464   ///
+      str    CPTM1_22                   465- 466   ///
+      str    CPTM1_23                   467- 468   ///
+      str    CPTM1_24                   469- 470   ///
+      str    CPTM1_25                   471- 472   ///
+      str    CPTM1_26                   473- 474   ///
+      str    CPTM1_27                   475- 476   ///
+      str    CPTM1_28                   477- 478   ///
+      str    CPTM1_29                   479- 480   ///
+      str    CPTM1_30                   481- 482   ///
+      str    CPTM1_31                   483- 484   ///
+      str    CPTM1_32                   485- 486   ///
+      str    CPTM1_33                   487- 488   ///
+      str    CPTM1_34                   489- 490   ///
+      str    CPTM1_35                   491- 492   ///
+      str    CPTM1_36                   493- 494   ///
+      str    CPTM1_37                   495- 496   ///
+      str    CPTM1_38                   497- 498   ///
+      str    CPTM1_39                   499- 500   ///
+      str    CPTM1_40                   501- 502   ///
+      str    CPTM1_41                   503- 504   ///
+      str    CPTM1_42                   505- 506   ///
+      str    CPTM1_43                   507- 508   ///
+      str    CPTM1_44                   509- 510   ///
+      str    CPTM1_45                   511- 512   ///
+      str    CPTM1_46                   513- 514   ///
+      str    CPTM1_47                   515- 516   ///
+      str    CPTM1_48                   517- 518   ///
+      str    CPTM1_49                   519- 520   ///
+      str    CPTM1_50                   521- 522   ///
+      str    CPTM2_1                    523- 524   ///
+      str    CPTM2_2                    525- 526   ///
+      str    CPTM2_3                    527- 528   ///
+      str    CPTM2_4                    529- 530   ///
+      str    CPTM2_5                    531- 532   ///
+      str    CPTM2_6                    533- 534   ///
+      str    CPTM2_7                    535- 536   ///
+      str    CPTM2_8                    537- 538   ///
+      str    CPTM2_9                    539- 540   ///
+      str    CPTM2_10                   541- 542   ///
+      str    CPTM2_11                   543- 544   ///
+      str    CPTM2_12                   545- 546   ///
+      str    CPTM2_13                   547- 548   ///
+      str    CPTM2_14                   549- 550   ///
+      str    CPTM2_15                   551- 552   ///
+      str    CPTM2_16                   553- 554   ///
+      str    CPTM2_17                   555- 556   ///
+      str    CPTM2_18                   557- 558   ///
+      str    CPTM2_19                   559- 560   ///
+      str    CPTM2_20                   561- 562   ///
+      str    CPTM2_21                   563- 564   ///
+      str    CPTM2_22                   565- 566   ///
+      str    CPTM2_23                   567- 568   ///
+      str    CPTM2_24                   569- 570   ///
+      str    CPTM2_25                   571- 572   ///
+      str    CPTM2_26                   573- 574   ///
+      str    CPTM2_27                   575- 576   ///
+      str    CPTM2_28                   577- 578   ///
+      str    CPTM2_29                   579- 580   ///
+      str    CPTM2_30                   581- 582   ///
+      str    CPTM2_31                   583- 584   ///
+      str    CPTM2_32                   585- 586   ///
+      str    CPTM2_33                   587- 588   ///
+      str    CPTM2_34                   589- 590   ///
+      str    CPTM2_35                   591- 592   ///
+      str    CPTM2_36                   593- 594   ///
+      str    CPTM2_37                   595- 596   ///
+      str    CPTM2_38                   597- 598   ///
+      str    CPTM2_39                   599- 600   ///
+      str    CPTM2_40                   601- 602   ///
+      str    CPTM2_41                   603- 604   ///
+      str    CPTM2_42                   605- 606   ///
+      str    CPTM2_43                   607- 608   ///
+      str    CPTM2_44                   609- 610   ///
+      str    CPTM2_45                   611- 612   ///
+      str    CPTM2_46                   613- 614   ///
+      str    CPTM2_47                   615- 616   ///
+      str    CPTM2_48                   617- 618   ///
+      str    CPTM2_49                   619- 620   ///
+      str    CPTM2_50                   621- 622   ///
+      long   DaysToEvent                623- 628   ///
+      byte   DIED                       629- 630   ///
+      str    DISP_X                     631- 632   ///
+      byte   DISPUB04                   633- 634   ///
+      byte   DISPUNIFORM                635- 636   ///
+      byte   DMONTH                     637- 638   ///
+      byte   DQTR                       639- 640   ///
+      str    DSHOSPID                   641- 657   ///
+      int    DXVER                      658- 660   ///
+      byte   FEMALE                     661- 662   ///
+      byte   HCUP_ED                    663- 664   ///
+      byte   HCUP_OS                    665- 666   ///
+      byte   HISPANIC                   667- 668   ///
+      str    HISPANIC_X                 669        ///
+      byte   Homeless                   670- 671   ///
+      str    HOSP_NPI                   672- 681   ///
+      str    HOSPST                     682- 683   ///
+      str    I10_DX_Visit_Reason1       684- 690   ///
+      str    I10_DX_Visit_Reason2       691- 697   ///
+      str    I10_DX_Visit_Reason3       698- 704   ///
+      str    I10_DX1                    705- 711   ///
+      str    I10_DX2                    712- 718   ///
+      str    I10_DX3                    719- 725   ///
+      str    I10_DX4                    726- 732   ///
+      str    I10_DX5                    733- 739   ///
+      str    I10_DX6                    740- 746   ///
+      str    I10_DX7                    747- 753   ///
+      str    I10_DX8                    754- 760   ///
+      str    I10_DX9                    761- 767   ///
+      str    I10_DX10                   768- 774   ///
+      str    I10_DX11                   775- 781   ///
+      str    I10_DX12                   782- 788   ///
+      str    I10_DX13                   789- 795   ///
+      str    I10_DX14                   796- 802   ///
+      str    I10_DX15                   803- 809   ///
+      str    I10_DX16                   810- 816   ///
+      str    I10_DX17                   817- 823   ///
+      str    I10_DX18                   824- 830   ///
+      str    I10_DX19                   831- 837   ///
+      str    I10_DX20                   838- 844   ///
+      str    I10_DX21                   845- 851   ///
+      str    I10_DX22                   852- 858   ///
+      str    I10_DX23                   859- 865   ///
+      str    I10_DX24                   866- 872   ///
+      str    I10_DX25                   873- 879   ///
+      str    I10_DX26                   880- 886   ///
+      str    I10_DX27                   887- 893   ///
+      str    I10_DX28                   894- 900   ///
+      str    I10_DX29                   901- 907   ///
+      str    I10_DX30                   908- 914   ///
+      str    I10_DX31                   915- 921   ///
+      str    I10_DX32                   922- 928   ///
+      str    I10_DX33                   929- 935   ///
+      str    I10_DX34                   936- 942   ///
+      str    I10_DX35                   943- 949   ///
+      str    I10_DX36                   950- 956   ///
+      str    I10_DX37                   957- 963   ///
+      str    I10_DX38                   964- 970   ///
+      str    I10_DX39                   971- 977   ///
+      str    I10_DX40                   978- 984   ///
+      str    I10_DX41                   985- 991   ///
+      str    I10_DX42                   992- 998   ///
+      str    I10_DX43                   999-1005   ///
+      str    I10_DX44                  1006-1012   ///
+      str    I10_DX45                  1013-1019   ///
+      str    I10_DX46                  1020-1026   ///
+      str    I10_DX47                  1027-1033   ///
+      str    I10_DX48                  1034-1040   ///
+      str    I10_DX49                  1041-1047   ///
+      str    I10_DX50                  1048-1054   ///
+      str    I10_ECAUSE1               1055-1061   ///
+      str    I10_ECAUSE2               1062-1068   ///
+      str    I10_ECAUSE3               1069-1075   ///
+      str    I10_ECAUSE4               1076-1082   ///
+      str    I10_ECAUSE5               1083-1089   ///
+      str    I10_ECAUSE6               1090-1096   ///
+      str    I10_ECAUSE7               1097-1103   ///
+      int    I10_NDX                   1104-1106   ///
+      byte   I10_NECAUSE               1107-1108   ///
+      int    I10_PROCTYPE              1109-1111   ///
+      double KEY                       1112-1126   ///
+      long   LOS                       1127-1131   ///
+      long   LOS_X                     1132-1137   ///
+      str    MDSPEC1                   1138-1140   ///
+      str    MDSPEC2                   1141-1143   ///
+      byte   MEDINCSTQ                 1144-1145   ///
+      long   MRN_R                     1146-1154   ///
+      int    NCPT                      1155-1158   ///
+      str    OPservice                 1159        ///
+      double OS_TIME                   1160-1170   ///
+      byte   PAY1                      1171-1172   ///
+      str    PAY1_X                    1173-1177   ///
+      byte   PAY2                      1178-1179   ///
+      str    PAY2_X                    1180-1184   ///
+      int    PL_CBSA                   1185-1187   ///
+      byte   PL_NCHS                   1188-1189   ///
+      byte   PL_RUCC                   1190-1191   ///
+      byte   PL_UIC                    1192-1193   ///
+      byte   PL_UR_CAT4                1194-1195   ///
+      str    PointOfOrigin_X           1196        ///
+      str    PointOfOriginUB04         1197        ///
+      str    PSTATE                    1198-1199   ///
+      long   PSTCO2                    1200-1204   ///
+      byte   RACE                      1205-1206   ///
+      str    RACE_X                    1207-1208   ///
+      byte   STATE_AS                  1209-1210   ///
+      byte   STATE_ED                  1211-1212   ///
+      byte   STATE_OS                  1213-1214   ///
+      double TOTCHG                    1215-1224   ///
+      double TOTCHG_X                  1225-1239   ///
+      long   VisitLink                 1240-1248   ///
+      int    YEAR                      1249-1252   ///
+      str    ZIP                       1253-1257   ///
+      str    ZIP3                      1258-1260   ///
+      int    ZIPINC_QRTL               1261-1263   ///
+      int    AYEAR                     1264-1267   ///
+      byte   BMONTH                    1268-1269   ///
+      int    BYEAR                     1270-1273   ///
+      using  "WI_SEDD_2016_CORE.ASC"
+
+***  Assign labels to the data elements ***
+label var AGE                      "Age in years at admission"
+label var AGEDAY                   "Age in days (when age < 1 year)"
+label var AGEMONTH                 "Age in months (when age < 11 years)"
+label var AMONTH                   "Admission month"
+label var ATYPE                    "Admission type"
+label var AWEEKEND                 "Admission day is a weekend"
+label var BILLTYPE                 "Type of bill, UB-04 coding"
+label var CPT1                     "CPT/HCPCS procedure code 1"
+label var CPT2                     "CPT/HCPCS procedure code 2"
+label var CPT3                     "CPT/HCPCS procedure code 3"
+label var CPT4                     "CPT/HCPCS procedure code 4"
+label var CPT5                     "CPT/HCPCS procedure code 5"
+label var CPT6                     "CPT/HCPCS procedure code 6"
+label var CPT7                     "CPT/HCPCS procedure code 7"
+label var CPT8                     "CPT/HCPCS procedure code 8"
+label var CPT9                     "CPT/HCPCS procedure code 9"
+label var CPT10                    "CPT/HCPCS procedure code 10"
+label var CPT11                    "CPT/HCPCS procedure code 11"
+label var CPT12                    "CPT/HCPCS procedure code 12"
+label var CPT13                    "CPT/HCPCS procedure code 13"
+label var CPT14                    "CPT/HCPCS procedure code 14"
+label var CPT15                    "CPT/HCPCS procedure code 15"
+label var CPT16                    "CPT/HCPCS procedure code 16"
+label var CPT17                    "CPT/HCPCS procedure code 17"
+label var CPT18                    "CPT/HCPCS procedure code 18"
+label var CPT19                    "CPT/HCPCS procedure code 19"
+label var CPT20                    "CPT/HCPCS procedure code 20"
+label var CPT21                    "CPT/HCPCS procedure code 21"
+label var CPT22                    "CPT/HCPCS procedure code 22"
+label var CPT23                    "CPT/HCPCS procedure code 23"
+label var CPT24                    "CPT/HCPCS procedure code 24"
+label var CPT25                    "CPT/HCPCS procedure code 25"
+label var CPT26                    "CPT/HCPCS procedure code 26"
+label var CPT27                    "CPT/HCPCS procedure code 27"
+label var CPT28                    "CPT/HCPCS procedure code 28"
+label var CPT29                    "CPT/HCPCS procedure code 29"
+label var CPT30                    "CPT/HCPCS procedure code 30"
+label var CPT31                    "CPT/HCPCS procedure code 31"
+label var CPT32                    "CPT/HCPCS procedure code 32"
+label var CPT33                    "CPT/HCPCS procedure code 33"
+label var CPT34                    "CPT/HCPCS procedure code 34"
+label var CPT35                    "CPT/HCPCS procedure code 35"
+label var CPT36                    "CPT/HCPCS procedure code 36"
+label var CPT37                    "CPT/HCPCS procedure code 37"
+label var CPT38                    "CPT/HCPCS procedure code 38"
+label var CPT39                    "CPT/HCPCS procedure code 39"
+label var CPT40                    "CPT/HCPCS procedure code 40"
+label var CPT41                    "CPT/HCPCS procedure code 41"
+label var CPT42                    "CPT/HCPCS procedure code 42"
+label var CPT43                    "CPT/HCPCS procedure code 43"
+label var CPT44                    "CPT/HCPCS procedure code 44"
+label var CPT45                    "CPT/HCPCS procedure code 45"
+label var CPT46                    "CPT/HCPCS procedure code 46"
+label var CPT47                    "CPT/HCPCS procedure code 47"
+label var CPT48                    "CPT/HCPCS procedure code 48"
+label var CPT49                    "CPT/HCPCS procedure code 49"
+label var CPT50                    "CPT/HCPCS procedure code 50"
+label var CPTCCS1                  "CCS: CPT 1"
+label var CPTCCS2                  "CCS: CPT 2"
+label var CPTCCS3                  "CCS: CPT 3"
+label var CPTCCS4                  "CCS: CPT 4"
+label var CPTCCS5                  "CCS: CPT 5"
+label var CPTCCS6                  "CCS: CPT 6"
+label var CPTCCS7                  "CCS: CPT 7"
+label var CPTCCS8                  "CCS: CPT 8"
+label var CPTCCS9                  "CCS: CPT 9"
+label var CPTCCS10                 "CCS: CPT 10"
+label var CPTCCS11                 "CCS: CPT 11"
+label var CPTCCS12                 "CCS: CPT 12"
+label var CPTCCS13                 "CCS: CPT 13"
+label var CPTCCS14                 "CCS: CPT 14"
+label var CPTCCS15                 "CCS: CPT 15"
+label var CPTCCS16                 "CCS: CPT 16"
+label var CPTCCS17                 "CCS: CPT 17"
+label var CPTCCS18                 "CCS: CPT 18"
+label var CPTCCS19                 "CCS: CPT 19"
+label var CPTCCS20                 "CCS: CPT 20"
+label var CPTCCS21                 "CCS: CPT 21"
+label var CPTCCS22                 "CCS: CPT 22"
+label var CPTCCS23                 "CCS: CPT 23"
+label var CPTCCS24                 "CCS: CPT 24"
+label var CPTCCS25                 "CCS: CPT 25"
+label var CPTCCS26                 "CCS: CPT 26"
+label var CPTCCS27                 "CCS: CPT 27"
+label var CPTCCS28                 "CCS: CPT 28"
+label var CPTCCS29                 "CCS: CPT 29"
+label var CPTCCS30                 "CCS: CPT 30"
+label var CPTCCS31                 "CCS: CPT 31"
+label var CPTCCS32                 "CCS: CPT 32"
+label var CPTCCS33                 "CCS: CPT 33"
+label var CPTCCS34                 "CCS: CPT 34"
+label var CPTCCS35                 "CCS: CPT 35"
+label var CPTCCS36                 "CCS: CPT 36"
+label var CPTCCS37                 "CCS: CPT 37"
+label var CPTCCS38                 "CCS: CPT 38"
+label var CPTCCS39                 "CCS: CPT 39"
+label var CPTCCS40                 "CCS: CPT 40"
+label var CPTCCS41                 "CCS: CPT 41"
+label var CPTCCS42                 "CCS: CPT 42"
+label var CPTCCS43                 "CCS: CPT 43"
+label var CPTCCS44                 "CCS: CPT 44"
+label var CPTCCS45                 "CCS: CPT 45"
+label var CPTCCS46                 "CCS: CPT 46"
+label var CPTCCS47                 "CCS: CPT 47"
+label var CPTCCS48                 "CCS: CPT 48"
+label var CPTCCS49                 "CCS: CPT 49"
+label var CPTCCS50                 "CCS: CPT 50"
+label var CPTDAY1                  "Number of days from admission to CPT1"
+label var CPTM1_1                  "First CPT-4/HCPCS modifier 1"
+label var CPTM1_2                  "First CPT-4/HCPCS modifier 2"
+label var CPTM1_3                  "First CPT-4/HCPCS modifier 3"
+label var CPTM1_4                  "First CPT-4/HCPCS modifier 4"
+label var CPTM1_5                  "First CPT-4/HCPCS modifier 5"
+label var CPTM1_6                  "First CPT-4/HCPCS modifier 6"
+label var CPTM1_7                  "First CPT-4/HCPCS modifier 7"
+label var CPTM1_8                  "First CPT-4/HCPCS modifier 8"
+label var CPTM1_9                  "First CPT-4/HCPCS modifier 9"
+label var CPTM1_10                 "First CPT-4/HCPCS modifier 10"
+label var CPTM1_11                 "First CPT-4/HCPCS modifier 11"
+label var CPTM1_12                 "First CPT-4/HCPCS modifier 12"
+label var CPTM1_13                 "First CPT-4/HCPCS modifier 13"
+label var CPTM1_14                 "First CPT-4/HCPCS modifier 14"
+label var CPTM1_15                 "First CPT-4/HCPCS modifier 15"
+label var CPTM1_16                 "First CPT-4/HCPCS modifier 16"
+label var CPTM1_17                 "First CPT-4/HCPCS modifier 17"
+label var CPTM1_18                 "First CPT-4/HCPCS modifier 18"
+label var CPTM1_19                 "First CPT-4/HCPCS modifier 19"
+label var CPTM1_20                 "First CPT-4/HCPCS modifier 20"
+label var CPTM1_21                 "First CPT-4/HCPCS modifier 21"
+label var CPTM1_22                 "First CPT-4/HCPCS modifier 22"
+label var CPTM1_23                 "First CPT-4/HCPCS modifier 23"
+label var CPTM1_24                 "First CPT-4/HCPCS modifier 24"
+label var CPTM1_25                 "First CPT-4/HCPCS modifier 25"
+label var CPTM1_26                 "First CPT-4/HCPCS modifier 26"
+label var CPTM1_27                 "First CPT-4/HCPCS modifier 27"
+label var CPTM1_28                 "First CPT-4/HCPCS modifier 28"
+label var CPTM1_29                 "First CPT-4/HCPCS modifier 29"
+label var CPTM1_30                 "First CPT-4/HCPCS modifier 30"
+label var CPTM1_31                 "First CPT-4/HCPCS modifier 31"
+label var CPTM1_32                 "First CPT-4/HCPCS modifier 32"
+label var CPTM1_33                 "First CPT-4/HCPCS modifier 33"
+label var CPTM1_34                 "First CPT-4/HCPCS modifier 34"
+label var CPTM1_35                 "First CPT-4/HCPCS modifier 35"
+label var CPTM1_36                 "First CPT-4/HCPCS modifier 36"
+label var CPTM1_37                 "First CPT-4/HCPCS modifier 37"
+label var CPTM1_38                 "First CPT-4/HCPCS modifier 38"
+label var CPTM1_39                 "First CPT-4/HCPCS modifier 39"
+label var CPTM1_40                 "First CPT-4/HCPCS modifier 40"
+label var CPTM1_41                 "First CPT-4/HCPCS modifier 41"
+label var CPTM1_42                 "First CPT-4/HCPCS modifier 42"
+label var CPTM1_43                 "First CPT-4/HCPCS modifier 43"
+label var CPTM1_44                 "First CPT-4/HCPCS modifier 44"
+label var CPTM1_45                 "First CPT-4/HCPCS modifier 45"
+label var CPTM1_46                 "First CPT-4/HCPCS modifier 46"
+label var CPTM1_47                 "First CPT-4/HCPCS modifier 47"
+label var CPTM1_48                 "First CPT-4/HCPCS modifier 48"
+label var CPTM1_49                 "First CPT-4/HCPCS modifier 49"
+label var CPTM1_50                 "First CPT-4/HCPCS modifier 50"
+label var CPTM2_1                  "Second CPT-4/HCPCS modifier 1"
+label var CPTM2_2                  "Second CPT-4/HCPCS modifier 2"
+label var CPTM2_3                  "Second CPT-4/HCPCS modifier 3"
+label var CPTM2_4                  "Second CPT-4/HCPCS modifier 4"
+label var CPTM2_5                  "Second CPT-4/HCPCS modifier 5"
+label var CPTM2_6                  "Second CPT-4/HCPCS modifier 6"
+label var CPTM2_7                  "Second CPT-4/HCPCS modifier 7"
+label var CPTM2_8                  "Second CPT-4/HCPCS modifier 8"
+label var CPTM2_9                  "Second CPT-4/HCPCS modifier 9"
+label var CPTM2_10                 "Second CPT-4/HCPCS modifier 10"
+label var CPTM2_11                 "Second CPT-4/HCPCS modifier 11"
+label var CPTM2_12                 "Second CPT-4/HCPCS modifier 12"
+label var CPTM2_13                 "Second CPT-4/HCPCS modifier 13"
+label var CPTM2_14                 "Second CPT-4/HCPCS modifier 14"
+label var CPTM2_15                 "Second CPT-4/HCPCS modifier 15"
+label var CPTM2_16                 "Second CPT-4/HCPCS modifier 16"
+label var CPTM2_17                 "Second CPT-4/HCPCS modifier 17"
+label var CPTM2_18                 "Second CPT-4/HCPCS modifier 18"
+label var CPTM2_19                 "Second CPT-4/HCPCS modifier 19"
+label var CPTM2_20                 "Second CPT-4/HCPCS modifier 20"
+label var CPTM2_21                 "Second CPT-4/HCPCS modifier 21"
+label var CPTM2_22                 "Second CPT-4/HCPCS modifier 22"
+label var CPTM2_23                 "Second CPT-4/HCPCS modifier 23"
+label var CPTM2_24                 "Second CPT-4/HCPCS modifier 24"
+label var CPTM2_25                 "Second CPT-4/HCPCS modifier 25"
+label var CPTM2_26                 "Second CPT-4/HCPCS modifier 26"
+label var CPTM2_27                 "Second CPT-4/HCPCS modifier 27"
+label var CPTM2_28                 "Second CPT-4/HCPCS modifier 28"
+label var CPTM2_29                 "Second CPT-4/HCPCS modifier 29"
+label var CPTM2_30                 "Second CPT-4/HCPCS modifier 30"
+label var CPTM2_31                 "Second CPT-4/HCPCS modifier 31"
+label var CPTM2_32                 "Second CPT-4/HCPCS modifier 32"
+label var CPTM2_33                 "Second CPT-4/HCPCS modifier 33"
+label var CPTM2_34                 "Second CPT-4/HCPCS modifier 34"
+label var CPTM2_35                 "Second CPT-4/HCPCS modifier 35"
+label var CPTM2_36                 "Second CPT-4/HCPCS modifier 36"
+label var CPTM2_37                 "Second CPT-4/HCPCS modifier 37"
+label var CPTM2_38                 "Second CPT-4/HCPCS modifier 38"
+label var CPTM2_39                 "Second CPT-4/HCPCS modifier 39"
+label var CPTM2_40                 "Second CPT-4/HCPCS modifier 40"
+label var CPTM2_41                 "Second CPT-4/HCPCS modifier 41"
+label var CPTM2_42                 "Second CPT-4/HCPCS modifier 42"
+label var CPTM2_43                 "Second CPT-4/HCPCS modifier 43"
+label var CPTM2_44                 "Second CPT-4/HCPCS modifier 44"
+label var CPTM2_45                 "Second CPT-4/HCPCS modifier 45"
+label var CPTM2_46                 "Second CPT-4/HCPCS modifier 46"
+label var CPTM2_47                 "Second CPT-4/HCPCS modifier 47"
+label var CPTM2_48                 "Second CPT-4/HCPCS modifier 48"
+label var CPTM2_49                 "Second CPT-4/HCPCS modifier 49"
+label var CPTM2_50                 "Second CPT-4/HCPCS modifier 50"
+label var DaysToEvent              "Days from 'start date' to admission"
+label var DIED                     "Died during hospitalization"
+label var DISP_X                   "Disposition of patient (as received from source)"
+label var DISPUB04                 "Disposition of patient (UB-04 standard coding)"
+label var DISPUNIFORM              "Disposition of patient (uniform)"
+label var DMONTH                   "Discharge month"
+label var DQTR                     "Discharge quarter"
+label var DSHOSPID                 "Data source hospital identifier"
+label var DXVER                    "Diagnosis Version"
+label var FEMALE                   "Indicator of sex"
+label var HCUP_ED                  "HCUP Emergency Department service indicator"
+label var HCUP_OS                  "HCUP Observation Stay service indicator"
+label var HISPANIC                 "Hispanic ethnicity (uniform)"
+label var HISPANIC_X               "Hispanic ethnicity (as received from source)"
+label var Homeless                 "Indicator that patient is homeless"
+label var HOSP_NPI                 "Hospital NPI"
+label var HOSPST                   "Hospital state postal code"
+label var I10_DX_Visit_Reason1     "ICD-10-CM Reason for visit diagnosis 1"
+label var I10_DX_Visit_Reason2     "ICD-10-CM Reason for visit diagnosis 2"
+label var I10_DX_Visit_Reason3     "ICD-10-CM Reason for visit diagnosis 3"
+label var I10_DX1                  "ICD-10-CM Diagnosis 1"
+label var I10_DX2                  "ICD-10-CM Diagnosis 2"
+label var I10_DX3                  "ICD-10-CM Diagnosis 3"
+label var I10_DX4                  "ICD-10-CM Diagnosis 4"
+label var I10_DX5                  "ICD-10-CM Diagnosis 5"
+label var I10_DX6                  "ICD-10-CM Diagnosis 6"
+label var I10_DX7                  "ICD-10-CM Diagnosis 7"
+label var I10_DX8                  "ICD-10-CM Diagnosis 8"
+label var I10_DX9                  "ICD-10-CM Diagnosis 9"
+label var I10_DX10                 "ICD-10-CM Diagnosis 10"
+label var I10_DX11                 "ICD-10-CM Diagnosis 11"
+label var I10_DX12                 "ICD-10-CM Diagnosis 12"
+label var I10_DX13                 "ICD-10-CM Diagnosis 13"
+label var I10_DX14                 "ICD-10-CM Diagnosis 14"
+label var I10_DX15                 "ICD-10-CM Diagnosis 15"
+label var I10_DX16                 "ICD-10-CM Diagnosis 16"
+label var I10_DX17                 "ICD-10-CM Diagnosis 17"
+label var I10_DX18                 "ICD-10-CM Diagnosis 18"
+label var I10_DX19                 "ICD-10-CM Diagnosis 19"
+label var I10_DX20                 "ICD-10-CM Diagnosis 20"
+label var I10_DX21                 "ICD-10-CM Diagnosis 21"
+label var I10_DX22                 "ICD-10-CM Diagnosis 22"
+label var I10_DX23                 "ICD-10-CM Diagnosis 23"
+label var I10_DX24                 "ICD-10-CM Diagnosis 24"
+label var I10_DX25                 "ICD-10-CM Diagnosis 25"
+label var I10_DX26                 "ICD-10-CM Diagnosis 26"
+label var I10_DX27                 "ICD-10-CM Diagnosis 27"
+label var I10_DX28                 "ICD-10-CM Diagnosis 28"
+label var I10_DX29                 "ICD-10-CM Diagnosis 29"
+label var I10_DX30                 "ICD-10-CM Diagnosis 30"
+label var I10_DX31                 "ICD-10-CM Diagnosis 31"
+label var I10_DX32                 "ICD-10-CM Diagnosis 32"
+label var I10_DX33                 "ICD-10-CM Diagnosis 33"
+label var I10_DX34                 "ICD-10-CM Diagnosis 34"
+label var I10_DX35                 "ICD-10-CM Diagnosis 35"
+label var I10_DX36                 "ICD-10-CM Diagnosis 36"
+label var I10_DX37                 "ICD-10-CM Diagnosis 37"
+label var I10_DX38                 "ICD-10-CM Diagnosis 38"
+label var I10_DX39                 "ICD-10-CM Diagnosis 39"
+label var I10_DX40                 "ICD-10-CM Diagnosis 40"
+label var I10_DX41                 "ICD-10-CM Diagnosis 41"
+label var I10_DX42                 "ICD-10-CM Diagnosis 42"
+label var I10_DX43                 "ICD-10-CM Diagnosis 43"
+label var I10_DX44                 "ICD-10-CM Diagnosis 44"
+label var I10_DX45                 "ICD-10-CM Diagnosis 45"
+label var I10_DX46                 "ICD-10-CM Diagnosis 46"
+label var I10_DX47                 "ICD-10-CM Diagnosis 47"
+label var I10_DX48                 "ICD-10-CM Diagnosis 48"
+label var I10_DX49                 "ICD-10-CM Diagnosis 49"
+label var I10_DX50                 "ICD-10-CM Diagnosis 50"
+label var I10_ECAUSE1              "ICD-10-CM External cause 1"
+label var I10_ECAUSE2              "ICD-10-CM External cause 2"
+label var I10_ECAUSE3              "ICD-10-CM External cause 3"
+label var I10_ECAUSE4              "ICD-10-CM External cause 4"
+label var I10_ECAUSE5              "ICD-10-CM External cause 5"
+label var I10_ECAUSE6              "ICD-10-CM External cause 6"
+label var I10_ECAUSE7              "ICD-10-CM External cause 7"
+label var I10_NDX                  "ICD-10-CM Number of diagnoses on this record"
+label var I10_NECAUSE              "ICD-10-CM Number of External cause codes on this record"
+label var I10_PROCTYPE             "ICD-10-PCS Procedure type indicator"
+label var KEY                      "HCUP record identifier"
+label var LOS                      "Length of stay (cleaned)"
+label var LOS_X                    "Length of stay (as received from source)"
+label var MDSPEC1                  "Physician 1 specialty (as received from source)"
+label var MDSPEC2                  "Physician 2 specialty (as received from source)"
+label var MEDINCSTQ                "Median household income state quartile for patient ZIP Code"
+label var MRN_R                    "Medical record number (re-identified)"
+label var NCPT                     "Number of CPT/HCPCS procedures for this visit"
+label var OPservice                "Indicator of outpatient service (as received from source)"
+label var OS_TIME                  "Observation stay time summed from UNITS"
+label var PAY1                     "Primary expected payer (uniform)"
+label var PAY1_X                   "Primary expected payer (as received from source)"
+label var PAY2                     "Secondary expected payer (uniform)"
+label var PAY2_X                   "Secondary expected payer (as received from source)"
+label var PL_CBSA                  "Patient location: Core Based Statistical Area (CBSA)"
+label var PL_NCHS                  "Patient Location: NCHS Urban-Rural Code"
+label var PL_RUCC                  "Patient location: Rural-Urban Continuum Codes(RUCC)"
+label var PL_UIC                   "Patient location: Urban Influence Codes"
+label var PL_UR_CAT4               "Patient Location: Urban-Rural 4 Categories"
+label var PointOfOrigin_X          "Point of origin for admission or visit, as received from source"
+label var PointOfOriginUB04        "Point of origin for admission or visit, UB-04 standard coding"
+label var PSTATE                   "Patient State postal code"
+label var PSTCO2                   "Patient state/county FIPS code, possibly derived from ZIP Code"
+label var RACE                     "Race (uniform)"
+label var RACE_X                   "Race (as received from source)"
+label var STATE_AS                 "State Ambulatory Surgery service indicator"
+label var STATE_ED                 "State Emergency Department service indicator"
+label var STATE_OS                 "State Observation Stay service indicator"
+label var TOTCHG                   "Total charges (cleaned)"
+label var TOTCHG_X                 "Total charges (as received from source)"
+label var VisitLink                "Visit linkage variable"
+label var YEAR                     "Calendar year"
+label var ZIP                      "Patient ZIP Code"
+label var ZIP3                     "Patient ZIP Code, first 3 digits"
+label var ZIPINC_QRTL              "Median household income national quartile for patient ZIP Code"
+label var AYEAR                    "Admission year"
+label var BMONTH                   "Birth month"
+label var BYEAR                    "Birth year"
+
+*** Convert special values to missing values ***
+recode AGE                       (-99 -88 -66=.)
+recode AGEDAY                    (-99 -88 -66=.)
+recode AGEMONTH                  (-99 -88 -66=.)
+recode AMONTH                    (-9 -8 -6 -5=.)
+recode ATYPE                     (-9 -8 -6 -5=.)
+recode AWEEKEND                  (-9 -8 -6 -5=.)
+recode CPTCCS1                   (-99 -88 -66=.)
+recode CPTCCS2                   (-99 -88 -66=.)
+recode CPTCCS3                   (-99 -88 -66=.)
+recode CPTCCS4                   (-99 -88 -66=.)
+recode CPTCCS5                   (-99 -88 -66=.)
+recode CPTCCS6                   (-99 -88 -66=.)
+recode CPTCCS7                   (-99 -88 -66=.)
+recode CPTCCS8                   (-99 -88 -66=.)
+recode CPTCCS9                   (-99 -88 -66=.)
+recode CPTCCS10                  (-99 -88 -66=.)
+recode CPTCCS11                  (-99 -88 -66=.)
+recode CPTCCS12                  (-99 -88 -66=.)
+recode CPTCCS13                  (-99 -88 -66=.)
+recode CPTCCS14                  (-99 -88 -66=.)
+recode CPTCCS15                  (-99 -88 -66=.)
+recode CPTCCS16                  (-99 -88 -66=.)
+recode CPTCCS17                  (-99 -88 -66=.)
+recode CPTCCS18                  (-99 -88 -66=.)
+recode CPTCCS19                  (-99 -88 -66=.)
+recode CPTCCS20                  (-99 -88 -66=.)
+recode CPTCCS21                  (-99 -88 -66=.)
+recode CPTCCS22                  (-99 -88 -66=.)
+recode CPTCCS23                  (-99 -88 -66=.)
+recode CPTCCS24                  (-99 -88 -66=.)
+recode CPTCCS25                  (-99 -88 -66=.)
+recode CPTCCS26                  (-99 -88 -66=.)
+recode CPTCCS27                  (-99 -88 -66=.)
+recode CPTCCS28                  (-99 -88 -66=.)
+recode CPTCCS29                  (-99 -88 -66=.)
+recode CPTCCS30                  (-99 -88 -66=.)
+recode CPTCCS31                  (-99 -88 -66=.)
+recode CPTCCS32                  (-99 -88 -66=.)
+recode CPTCCS33                  (-99 -88 -66=.)
+recode CPTCCS34                  (-99 -88 -66=.)
+recode CPTCCS35                  (-99 -88 -66=.)
+recode CPTCCS36                  (-99 -88 -66=.)
+recode CPTCCS37                  (-99 -88 -66=.)
+recode CPTCCS38                  (-99 -88 -66=.)
+recode CPTCCS39                  (-99 -88 -66=.)
+recode CPTCCS40                  (-99 -88 -66=.)
+recode CPTCCS41                  (-99 -88 -66=.)
+recode CPTCCS42                  (-99 -88 -66=.)
+recode CPTCCS43                  (-99 -88 -66=.)
+recode CPTCCS44                  (-99 -88 -66=.)
+recode CPTCCS45                  (-99 -88 -66=.)
+recode CPTCCS46                  (-99 -88 -66=.)
+recode CPTCCS47                  (-99 -88 -66=.)
+recode CPTCCS48                  (-99 -88 -66=.)
+recode CPTCCS49                  (-99 -88 -66=.)
+recode CPTCCS50                  (-99 -88 -66=.)
+recode CPTDAY1                   (-99 -88 -66=.)
+recode DaysToEvent               (-99999 -88888 -66666=.)
+recode DIED                      (-9 -8 -6 -5=.)
+recode DISPUB04                  (-9 -8 -6 -5=.)
+recode DISPUNIFORM               (-9 -8 -6 -5=.)
+recode DMONTH                    (-9 -8 -6 -5=.)
+recode DQTR                      (-9 -8 -6 -5=.)
+recode DXVER                     (-99 -88 -66=.)
+recode FEMALE                    (-9 -8 -6 -5=.)
+recode HCUP_ED                   (-9 -8 -6 -5=.)
+recode HCUP_OS                   (-9 -8 -6 -5=.)
+recode HISPANIC                  (-9 -8 -6 -5=.)
+recode Homeless                  (-9 -8 -6 -5=.)
+recode I10_NDX                   (-99 -88 -66=.)
+recode I10_NECAUSE               (-9 -8 -6 -5=.)
+recode I10_PROCTYPE              (-99 -88 -66=.)
+recode LOS                       (-9999 -8888 -6666=.)
+recode LOS_X                     (-99999 -88888 -66666=.)
+recode MEDINCSTQ                 (-9 -8 -6 -5=.)
+recode MRN_R                     (-99999999 -88888888 -66666666=.)
+recode NCPT                      (-999 -888 -666=.)
+recode OS_TIME                   (-9999999.99 -8888888.88 -6666666.66=.)
+recode PAY1                      (-9 -8 -6 -5=.)
+recode PAY2                      (-9 -8 -6 -5=.)
+recode PL_CBSA                   (-99 -88 -66=.)
+recode PL_NCHS                   (-9 -8 -6 -5=.)
+recode PL_RUCC                   (-9 -8 -6 -5=.)
+recode PL_UIC                    (-9 -8 -6 -5=.)
+recode PL_UR_CAT4                (-9 -8 -6 -5=.)
+recode PSTCO2                    (-9999 -8888 -6666=.)
+recode RACE                      (-9 -8 -6 -5=.)
+recode STATE_AS                  (-9 -8 -6 -5=.)
+recode STATE_ED                  (-9 -8 -6 -5=.)
+recode STATE_OS                  (-9 -8 -6 -5=.)
+recode TOTCHG                    (-999999999 -888888888 -666666666=.)
+recode TOTCHG_X                  (-99999999999.99 -88888888888.88 -66666666666.66=.)
+recode VisitLink                 (-99999999 -88888888 -66666666=.)
+recode YEAR                      (-999 -888 -666=.)
+recode ZIPINC_QRTL               (-99 -88 -66=.)
+recode AYEAR                     (-999 -888 -666=.)
+recode BMONTH                    (-9 -8 -6 -5=.)
+recode BYEAR                     (-999 -888 -666=.)
+
+save "WI_SEDD_2016_CORE.dta", replace

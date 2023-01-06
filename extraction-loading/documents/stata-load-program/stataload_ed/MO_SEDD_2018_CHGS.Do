@@ -1,0 +1,42 @@
+/*****************************************************************************
+* Creation Date: 07/22/2021   
+* MO_SEDD_2018_CHGS.Do
+* This program will load the 2018 MO ASCII CHGS File into Stata.
+* Because Stata loads the entire file into memory, it may not be possible
+* to load every data element for large files.  If necessary, edit this
+* program to change the memory size or to load only selected data elements.
+*****************************************************************************/
+
+***************************************************************;
+* ----------------------------------------------------------- *;
+* |  NOTICE: Use of HCUP data constitutes acceptance of the | *;
+* |  terms and conditions of the HCUP Data Use Agreement.   | *;
+* ----------------------------------------------------------- *;
+***************************************************************;
+
+
+*** Set available memory size ***
+set mem 500m
+
+*** Read data elements from the ASCII file ***
+*** Skip the first two lines from the ASCII file i.e. infix 3 firstlineoffile ***
+infix 3 firstlineoffile                            ///
+      str    CPTHCPCS                     1-   5   ///
+      double KEY                          6-  20   ///
+      str    REVCODE                     21-  24   ///
+      long   SERVDAY                     25-  29   ///
+      double UNITS                       30-  40   ///
+      using  "MO_SEDD_2018_CHGS.ASC"
+
+***  Assign labels to the data elements ***
+label var CPTHCPCS                 "Line item CPT-4/HCPCS procedure code (as received from source)"
+label var KEY                      "HCUP record identifier"
+label var REVCODE                  "Line item revenue code (as received from source)"
+label var SERVDAY                  "Line item days from admission date"
+label var UNITS                    "Line item units (as received from source)"
+
+*** Convert special values to missing values ***
+recode SERVDAY                   (-9999 -8888 -6666=.)
+recode UNITS                     (-9999999.99 -8888888.88 -6666666.66=.)
+
+save "MO_SEDD_2018_CHGS.dta", replace
