@@ -7,6 +7,13 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Overview\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\nDatawarehouse Proposal 2022\n\n\nRequest from Alina to draft 2 paragraph infrastuctre proposal for grant\n\n\n\n\n\n\n\n\n\nDec 9, 2022\n\n\nRan Li\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDatawarehouse Proposal 2022 Slides\n\n\nBackground slides summarizing some basic data warehousing concepts.\n\n\n\n\n\n\n\n\n\nDec 9, 2022\n\n\nRan Li\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "HCUP Resource at the UHC",
@@ -26,6 +33,55 @@
     "title": "HCUP Resource at the UHC",
     "section": "What is HCUP",
     "text": "What is HCUP\n\nThe Healthcare Cost and Utilization Project (HCUP) includes the largest collection of longitudinal hospital care data in the United States."
+  },
+  {
+    "objectID": "pages/blog/datawarehouse-proposal-2022/index.html",
+    "href": "pages/blog/datawarehouse-proposal-2022/index.html",
+    "title": "Datawarehouse Proposal 2022",
+    "section": "",
+    "text": "Data warehousing is a critical component of any research or data organization; it consists of data storage, a database engine, and a way to organize database assets. Properly implemented, a data warehouse will reduce infrastructure/staffing costs, reduce data bottlenecks, and increase research synthesis. Therefore, academic organizations need to keep abreast of industry trends and best practices to get the most they can out of their data assets.\nHere we discuss a few modern data warehousing solutions that we will/have implemented at our organization. Firstly, data is stored in a columnar format such as .parquet which has been optimized for efficient storage and rapid analysis of large amounts of data. Secondly, the intentional utilization of a multilingual and lightweight database engine (e.g. Apache Arrow or DuckDB) that is designed for analytical tasks rather than transactional purposes. Lastly, we orchestrate the data storage and analytics within the context of best-practices frameworks such as Targets (R framework from pharma) or DBT (SQL framework from the health analytics sector). Taken together these tools compose a modern data stack that will not only enable us to effectively utilize big data to rapidly deliver on proposed research goals but also synergize with the staffing and costs parameters within our organization."
+  },
+  {
+    "objectID": "pages/blog/infrastructure-exploration-slides/index.html",
+    "href": "pages/blog/infrastructure-exploration-slides/index.html",
+    "title": "Datawarehouse Proposal 2022 Slides",
+    "section": "",
+    "text": "Some slides"
+  },
+  {
+    "objectID": "pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html#overview",
+    "href": "pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html#overview",
+    "title": "UHC - HCUP Resource",
+    "section": "Overview",
+    "text": "Overview\n\nDatabase\n\nDefine database and evaluate databases\nDatabase recommendations\n\nDatawarehouse\n\nDefine data warehouse and evaluate two options\nDatawarehouse recommendations\n\nDemo of current prototype\n\ntargets pipeline on the backend\ndbt-like documentation on the front-end"
+  },
+  {
+    "objectID": "pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html#database",
+    "href": "pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html#database",
+    "title": "UHC - HCUP Resource",
+    "section": "Database",
+    "text": "Database\n\nDatabase is a collection of data\nDatabase Management System (DBMS) is a software used to manage databases.\nDBMS can be evaluated based on two criteria\n\nPurpose: Transactional vs Analytical\nInfrastructure: Sever vs Serverless"
+  },
+  {
+    "objectID": "pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html#database-purpose",
+    "href": "pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html#database-purpose",
+    "title": "UHC - HCUP Resource",
+    "section": "Database Purpose",
+    "text": "Database Purpose"
+  },
+  {
+    "objectID": "pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html#database-architecture",
+    "href": "pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html#database-architecture",
+    "title": "UHC - HCUP Resource",
+    "section": "Database Architecture",
+    "text": "Database Architecture"
+  },
+  {
+    "objectID": "pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html#comparisons",
+    "href": "pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html#comparisons",
+    "title": "UHC - HCUP Resource",
+    "section": "Comparisons",
+    "text": "Comparisons\ndb engine graph\nTakeaway:\n\nBig Query is analytical, sever based DBMS\nPostgreSQL: is a transactional, server based DMBS\nDuckDB/Arrow: analytical, server-less DBMS\n\nRecent venture investment indicates ong term manintainblity\nLight-weight\nMulti-lingual\nNo cost"
   },
   {
     "objectID": "pages/manuals/parquet/index.html",

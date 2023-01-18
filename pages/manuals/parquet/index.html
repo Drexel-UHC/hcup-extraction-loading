@@ -165,6 +165,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../../blog.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -273,8 +277,8 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">reactable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="htmlwidget-857837f0dddbbf805594" class="reactable html-widget" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-857837f0dddbbf805594">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"format":["csv","parquet"],"size_bytes":[17162099,89448]},"columns":[{"accessor":"format","name":"format","type":"character"},{"accessor":"size_bytes","name":"size_bytes","type":"numeric"}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"dataKey":"ed017dfaa6e6c09b147259f13bcef3d2"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1d4f7b94b0f746d51a0d" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1d4f7b94b0f746d51a0d">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"format":["csv","parquet"],"size_bytes":[17162099,89448]},"columns":[{"accessor":"format","name":"format","type":"character"},{"accessor":"size_bytes","name":"size_bytes","type":"numeric"}],"defaultPageSize":10,"paginationType":"numbers","showPageInfo":true,"minRows":1,"dataKey":"ed017dfaa6e6c09b147259f13bcef3d2"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>We can see the parquet format is only 88 KB in size compared to the 16,760 KB CSV; in this example CSV storage take up <strong>192</strong> more space compared to parquet. If we were storing things on the cloud, in this case, parquet format would be almost 200 times cheaper!</p>

@@ -1,9 +1,10 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
+      "/pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html",
+      "/pages/blog/datawarehouse-proposal-2022/index.html",
+      "/pages/blog/infrastructure-exploration-slides/index.html"
     ]
   }
 ]
