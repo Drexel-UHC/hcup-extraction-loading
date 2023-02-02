@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Drexel-UHC.github.io/hcup-extraction-loading/about.html</loc>
-    <lastmod>2023-01-18T17:11:17.416Z</lastmod>
+    <lastmod>2023-02-02T20:48:36.232Z</lastmod>
   </url>
   <url>
     <loc>https://Drexel-UHC.github.io/hcup-extraction-loading/blog.html</loc>
-    <lastmod>2023-01-18T17:11:17.845Z</lastmod>
+    <lastmod>2023-02-02T20:48:36.705Z</lastmod>
   </url>
   <url>
     <loc>https://Drexel-UHC.github.io/hcup-extraction-loading/index.html</loc>
-    <lastmod>2023-01-18T17:11:18.178Z</lastmod>
+    <lastmod>2023-02-02T20:48:37.036Z</lastmod>
   </url>
   <url>
     <loc>https://Drexel-UHC.github.io/hcup-extraction-loading/pages/blog/datawarehouse-proposal-2022/index.html</loc>
-    <lastmod>2023-01-18T17:11:18.497Z</lastmod>
+    <lastmod>2023-02-02T20:48:37.364Z</lastmod>
   </url>
   <url>
     <loc>https://Drexel-UHC.github.io/hcup-extraction-loading/pages/blog/infrastructure-exploration-slides/index.html</loc>
-    <lastmod>2023-01-18T17:11:18.893Z</lastmod>
+    <lastmod>2023-02-02T20:48:37.684Z</lastmod>
   </url>
   <url>
     <loc>https://Drexel-UHC.github.io/hcup-extraction-loading/pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html</loc>
-    <lastmod>2023-01-18T17:11:19.348Z</lastmod>
+    <lastmod>2023-02-02T20:48:38.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Drexel-UHC.github.io/hcup-extraction-loading/pages/blog/parquet-testing/index.html</loc>
+    <lastmod>2023-02-02T20:48:41.341Z</lastmod>
   </url>
   <url>
     <loc>https://Drexel-UHC.github.io/hcup-extraction-loading/pages/manuals/parquet/index.html</loc>
-    <lastmod>2023-01-18T17:11:23.928Z</lastmod>
+    <lastmod>2023-02-02T20:48:44.862Z</lastmod>
   </url>
 </urlset>

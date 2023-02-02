@@ -11,7 +11,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Overview\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\nDatawarehouse Proposal 2022\n\n\nRequest from Alina to draft 2 paragraph infrastuctre proposal for grant\n\n\n\n\n\n\n\n\n\nDec 9, 2022\n\n\nRan Li\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDatawarehouse Proposal 2022 Slides\n\n\nBackground slides summarizing some basic data warehousing concepts.\n\n\n\n\n\n\n\n\n\nDec 9, 2022\n\n\nRan Li\n\n\n\n\n\n\nNo matching items"
+    "text": "Overview\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nParquet Benchmarking!\n\n\nLets do some benchmark some CSV vs Parquet tests.\n\n\n\n\n\n\n\n\n\nFeb 2, 2023\n\n\nRan Li\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDatawarehouse Proposal 2022\n\n\nRequest from Alina to draft 2 paragraph infrastuctre proposal for grant\n\n\n\n\n\n\n\n\n\nDec 9, 2022\n\n\nRan Li\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDatawarehouse Proposal 2022 Slides\n\n\nBackground slides summarizing some basic data warehousing concepts.\n\n\n\n\n\n\n\n\n\nDec 9, 2022\n\n\nRan Li\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -82,6 +82,41 @@
     "title": "UHC - HCUP Resource",
     "section": "Comparisons",
     "text": "Comparisons\ndb engine graph\nTakeaway:\n\nBig Query is analytical, sever based DBMS\nPostgreSQL: is a transactional, server based DMBS\nDuckDB/Arrow: analytical, server-less DBMS\n\nRecent venture investment indicates ong term manintainblity\nLight-weight\nMulti-lingual\nNo cost"
+  },
+  {
+    "objectID": "pages/blog/parquet-testing/index.html#intro",
+    "href": "pages/blog/parquet-testing/index.html#intro",
+    "title": "Parquet Benchmarking!",
+    "section": "Intro",
+    "text": "Intro\nSimilar to a CSV file, Parquet is a type of file. The difference is that Parquet is designed as a columnar storage format to support complex data processing.\n\nApache Parquet is column-oriented and designed to bring efficient columnar storage (blocks, row group, column chunks…) of data compared to row-based like CSV\nParquet files were designed with complex nested data structures in mind.\nApache Parquet is built to support very efficient compression and encoding schemes (see Google Snappy)\nApache Parquet allows lower storage costs for data files and maximizes the effectiveness of querying data with serverless OLAP technologies like DuckDB, Amazon Athena, Redshift Spectrum, BigQuery, and Azure Data Lakes.\n\nThe “big data” association with this format may give the impression that the format is limited to specific use cases. However, as the format has moved out of the shadow of complex Hadoop big data solutions, it has gained broader support. For example, teams build low-cost, high-performance serverless business intelligence stacks with Apache Parquet, Tableau, and Amazon Athena."
+  },
+  {
+    "objectID": "pages/blog/parquet-testing/index.html#columnar-storage-test",
+    "href": "pages/blog/parquet-testing/index.html#columnar-storage-test",
+    "title": "Parquet Benchmarking!",
+    "section": "Columnar Storage Test",
+    "text": "Columnar Storage Test\nColumnar storage in a Parquet file saves on file size by compressing and encoding similar data values in the same column together, rather than spreading them across rows. This is because columnar storage is optimized for reading and processing specific columns, rather than entire rows.\nIn the example you provided, a columnar storage format like Parquet would efficiently store the values “cat” and “dog” by encoding them once and referencing their encoding for each instance in the column, rather than repeating the entire value for each row. This results in a more compact representation of the data and reduces the overall file size.\nLet generate two tables both 2 million rows long. With a single column called pet with two possible values cat or dog. The first table we call df_ordered has 1 million cats and 1 million dogs ordered. The second table called df_unordered has the same values but alternating cat dog cat dog.\nLets see the parquet storage sizes!\n\n## Generate tables \nn = 10^6\ndf_ordered = tibble(pet = c(rep(\"cat\",n),rep(\"dog\",n)))\ndf_unordered = tibble(pet = rep(c(\"cat\",\"dog\"),n))\n\n## Write to parquet and CSV\ndf_ordered %>% fwrite('df_ordered.csv')\ndf_ordered %>% write_parquet(sink = 'df_ordered.parquet')\ndf_unordered %>% fwrite('df_unordered.csv')\ndf_unordered %>% write_parquet(sink = 'df_unordered.parquet')\n\n\ntibble( file = list.files(pattern = \"df_\")) %>% \n  mutate(size_bytes = file.size(file),\n         size_kb = size_bytes/1024 %>% round(1),\n         size_mb = size_kb/1024 %>% round( 0))  %>% \n  select(file, size_mb) %>% \n  arrange(size_mb) %>% \n  filter(!str_detect(file,'long_str'))\n\n\n\n\n\nfile\nsize_mb\n\n\n\n\ndf_ordered.parquet\n0.0004826\n\n\ndf_unordered.parquet\n0.0118704\n\n\ndf_ordered.csv\n9.5367479\n\n\ndf_unordered.csv\n9.5367479\n\n\n\n\n\n\nAs expect massive win in terms of storage size for parquet. Even in the case of completely alternating cat, dog, cat, dog values in df_unordered.parquet we still see huge size reduction. This is because parquet will encode cat and dog in the metadata then in the data itself just store encoding (a much more memory efficient object than a string).\nSo hypothetically if we had much longer strings. The df_unordred should be similar in size because of this encoding.\n\ndf_unordered_long_str = df_unordered %>% \n  mutate(pet = paste0(pet,\".................\"))\n\ndf_unordered_long_str %>% write_parquet(sink = 'df_unordered_long_str.parquet')\ndf_unordered_long_str %>% fwrite('df_unordered_long_str.csv')\n\n\ntibble( file = list.files(pattern = \"df_\")) %>% \n  mutate(size_bytes = file.size(file),\n         size_kb = size_bytes/1024 %>% round(1),\n         size_mb = size_kb/1024 %>% round( 0))  %>% \n  select(file, size_mb) %>% \n  arrange(size_mb) %>% \n  filter(file%in%c('df_unordered.parquet','df_unordered_long_str.parquet'))\n\n\n\n\n\nfile\nsize_mb\n\n\n\n\ndf_unordered.parquet\n0.0118704\n\n\ndf_unordered_long_str.parquet\n0.0119753\n\n\n\n\n\n\nIndeed this encoding shows how even after appending a bunch of characteres to the pet column. We don’t see any increase in the parquet file size.\nFor giggles lets see what happens to CSV size when we add characters to the pet column values.\n\ntibble( file = list.files(pattern = \"df_\")) %>% \n  mutate(size_bytes = file.size(file),\n         size_kb = size_bytes/1024 %>% round(1),\n         size_mb = size_kb/1024 %>% round( 0))  %>% \n  select(file, size_mb) %>% \n  arrange(size_mb) %>% \n  filter(file%in%c('df_unordered.csv','df_unordered_long_str.csv'))\n\n\n\n\n\nfile\nsize_mb\n\n\n\n\ndf_unordered.csv\n9.536748\n\n\ndf_unordered_long_str.csv\n41.961675\n\n\n\n\n\n\nAs expected we see an increase in size due to each cell value changing. Parquet smartly avoids this by using encoding!"
+  },
+  {
+    "objectID": "pages/blog/parquet-testing/index.html#cons-of-csv-and-parquet",
+    "href": "pages/blog/parquet-testing/index.html#cons-of-csv-and-parquet",
+    "title": "Parquet Benchmarking!",
+    "section": "Cons of CSV and parquet",
+    "text": "Cons of CSV and parquet\nCSV is ubiquitous and straightforward. Many tools like Excel, Google Sheets, and a host of others can generate CSV files. You can even create CSV files with your favorite text editing tool.\nThe price you pay for CSV files?\n\ncolumnar databases (column oriented OLAP like DuckDB, AWS Athena, Bigquery, AWS Redshift) charge by amount of data scanned.\n\nCSV files have to be completely scanned to run a query.\nParquet files only selected columns are read.\n\nStorage size is much lower, so lower storage costs.\nno self contained metadata\n\nParquet on the other handle resolves a lot of these issues but is less accessible. You can’t just open it in excel (currently). Hopefully as parquet becomes more prevalent, I hope mainstream tools such as MS excel will be able to use parquet."
+  },
+  {
+    "objectID": "pages/blog/parquet-testing/index.html#parquet-arrow-empowers-existing-data-science-workflows",
+    "href": "pages/blog/parquet-testing/index.html#parquet-arrow-empowers-existing-data-science-workflows",
+    "title": "Parquet Benchmarking!",
+    "section": "Parquet + Arrow: empowers existing data science workflows",
+    "text": "Parquet + Arrow: empowers existing data science workflows\nto polish…\nthe syneregy between parquet + embedded databases (e.g. Arrow) brings so much power to existing R/Python workflows. Most of the time enables you do big data without any inffrastructure or tool change"
+  },
+  {
+    "objectID": "pages/blog/parquet-testing/index.html#parquet-and-the-modern-data-stack",
+    "href": "pages/blog/parquet-testing/index.html#parquet-and-the-modern-data-stack",
+    "title": "Parquet Benchmarking!",
+    "section": "Parquet and the modern data stack",
+    "text": "Parquet and the modern data stack\nto polish…\nStorage is cheap, computation is expensive. Was how things use to be.\nNow modern databases are shifting towards serverless OLAP engines (DuckDB, AWS Athena, Google BigQuery) which charge based on consumption (e.g. how many megabytes of data scanned)…\nThis cost mechanism when paired the benefits of columnar storage such as parquet means now computation/queries are extremely cheap.\nSo the modern datastack is often some combination of the two."
   },
   {
     "objectID": "pages/manuals/parquet/index.html",

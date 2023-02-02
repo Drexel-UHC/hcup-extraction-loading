@@ -3,6 +3,7 @@
     "listing": "/blog.html",
     "items": [
       "/pages/blog/infrastructure-exploration-slides/slides/hcup-infrastructure-proposal-slides.html",
+      "/pages/blog/parquet-testing/index.html",
       "/pages/blog/datawarehouse-proposal-2022/index.html",
       "/pages/blog/infrastructure-exploration-slides/index.html"
     ]
